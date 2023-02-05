@@ -1,0 +1,19 @@
+import './mainLayout.css';
+import HeaderNavBar from '../../components/headerNavBar/headerNavBar';
+import FooterLayout from '../footerLayout/footerLayout';
+import { useSelector } from 'react-redux';
+
+export default function MainLayout({children}) {
+
+    
+    const isActive = useSelector((state) => state.isLeftActive.activity);
+    console.log(isActive)
+    return(
+        <div className={isActive ? 'hidden' : ''} >
+            <HeaderNavBar/>
+            {children}
+            <FooterLayout/>
+        </div>
+
+    )
+}

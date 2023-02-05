@@ -1,0 +1,108 @@
+
+.social-section{
+    height: 75px;
+    background-color: #4220a3;
+}
+.social-item-container{
+    width: 1110px;
+    margin: auto;
+}
+.social-left-container{
+    float: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 555px;
+    margin-top: 18px;
+}
+.social-right-section{
+    float: right;
+    margin-top: 18px;
+}
+.left-item{
+
+    text-decoration: none;
+    color: #fff;
+    background-color: #4a1fc3;
+    padding: 13px 45px 13px 45px;
+    border-radius: 5px;
+}
+.left-item-img{
+    margin-right: 8px;
+}
+.right-item{
+    border:1px solid rgb(218 211 211 / 39%);
+    color: white;
+    padding: 13px 25px 13px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-family: serif;
+}
+#a{
+    float: left;
+    margin-right: 35px;
+}
+#partner, #bussines{
+    float: right;
+}
+.mobile-footer{
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .mobile-icon-container-ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        padding-top: 30px;
+    }
+    .social-section{
+        display:none
+    }
+    .mobile-footer{
+        display: block;
+    }
+    .mobile-icon-container{
+        width: 140px;
+        height: 75px;
+        padding-left: 20px;
+    }
+    .mobile-icon-container-ul li a{
+        display: flex;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 32px;
+        background-color: rgba(58,58,58,.05);
+    }
+    .mobile-icon-container-ul li a>img{
+        margin-left: 4px;
+    }
+    .partner-info-container{
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - 40px);
+        margin: auto;
+        padding-top: 6px;
+    }
+    .partner-info-container>a{
+        text-align: center;
+        text-decoration: none;
+        color:  #532bc4;
+        height: 32px;
+        font-family: 'Gotham';
+        font-size: 12px;
+        line-height: 2.5;
+        width: calc(50% - 7px);
+        border-radius: 10px;
+        border: 1px solid #532bc4;
+    }
+    a.active{
+        background-color: #4220a3;
+        color: #fff;
+    }  
+}

@@ -1,0 +1,90 @@
+.registerForm-field-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+    border: 1px solid #a3a3a3;
+    height: 40px;
+    padding: 4px 14px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.registerForm-eyeIcon{
+    width: 26px;
+    opacity: 0.4;
+    height: 27px;
+}
+.registerForm-form-field{
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 12px 9px 9px;
+    font-size: 15px;
+}
+.registerForm-submit-button{
+    width: 100%;
+    font-size: .875rem;
+    line-height: 1.0625rem;
+    text-align: center;
+    color: #fff;
+    background: #532bc4;
+    border-radius: 0.3125rem;
+    border: 0;
+    outline: none;
+    padding: 0.9375rem;
+    margin-top: 0.625rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+.registerForm-arrowIcon{
+    width: 10px;
+    opacity: 0.4;
+}
+.registerForm-prefix-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+    border-right: 1px solid #a7a7a7;
+    width: 59px;
+}
+.registerForm-other-prefixes{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 44px;
+    z-index: 11;
+    background-color: #fff;
+    left: 0;
+    display: none;
+}
+.registerForm-other-prefixes-active{
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 44px;
+    z-index: 11;
+    background-color: #fff;
+    left: 0;
+}
+.registerForm-defaultPrefix{
+    color:#3a3a3aa8;
+}
+.registerForm-other-prefixes li, .registerForm-other-prefixes-active li{
+    line-height: 3;
+    padding: 0 31px 0 15px;
+    cursor: pointer;
+    color:#3a3a3aa8;
+}
+.registerForm-other-prefixes li:hover, .registerForm-other-prefixes-active li:hover{
+    background-color: #a3a3a32b;
+}
+.registerForm-date-field{
+    border: none;
+    outline: none;
+    display: flex;
+    width: 100%;
+}

@@ -1,0 +1,166 @@
+
+
+.bottom-first-container {
+    background-color: hsla(0,0%,89.8%,.25);
+}
+.header {
+    width: 100%;
+    font-weight: 100;
+    font-family: sans-serif;
+    color: #3a3a3a;
+    height: 35px;
+}
+.bottom-top{
+    width: 1110px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+.bottom-top-first{
+    width: 730px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    z-index: 2;
+    margin: 20px 0;
+}
+.img-section-first{
+    width: 730px;   
+    height: 350px;  
+    transition: 2s;
+}
+.img-section{
+    width: 350px;   
+    height: 350px;  
+    transition: 2s;
+}
+.img-section:hover, .img-section-first:hover{
+    transform:scale(1.1, 1.1)
+}
+.bottom-top-second{
+    width: 350px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+.bottom-button-section{
+    position: absolute;
+    bottom: 35px;
+    left: 25px; 
+}
+.bottom-button-section>a{
+    text-decoration: none;
+    padding: 16px 30px;
+    background-color: white;
+    border-radius: 6px;  
+    color: #3a3a3a;
+}
+.bottom-top-header{
+    width: 100%;
+    height: 25px;
+}
+.bottom-top-header h2{
+    margin: 0;
+}
+.bottom-top-second-hidden{
+    visibility: hidden;
+    height: 0;
+}
+.showAllbutton-noVisible{
+   display: none;
+}
+.showAllbutton{
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 0.125rem solid #532bc4;
+    border-radius: 0.3125rem;
+    background-color: #fff;
+    color: #532bc4;
+    font-family: Gotham-Medium;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+    padding: 16px 30px;
+    cursor: pointer;
+    outline: none;
+    font-weight: 400;
+}
+.plusIcon{
+    margin-right: 10px;
+}
+.button-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+
+    
+    .bottom-first-container{
+        width: 100%;
+    }
+    .bottom-top{
+        margin-top: 40px;
+        padding-top: 20px;
+        width: calc(100% - 40px);
+    }
+    .search-button{
+        top: 440px;
+        padding:0;
+        left: 20px;
+        width: calc(100% - 40px);
+        height: 50px;
+        text-align: center;
+        line-height: 3;
+    }
+
+    
+    .bottom-top-first,
+    .bottom-top-second {
+        width: calc(50% - 5px);
+        height: 42.19vw;
+        margin-bottom: 10px;
+    }
+
+    .img-section-first,
+    .img-section,
+    .img-section-first>img,
+    .img-section>img {
+        width: 100%; 
+        height: 100%;
+    }
+    .bottom-button-section>a{
+        font-family: 'Gotham';
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 14px;
+        padding: 0;
+    }
+    .bottom-button-section{
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0 10px;
+        left: 15px;
+        bottom: 15px;
+        width: 105px;
+        height: 32px;
+        background-color: #fff;
+        border-radius: 5px;
+        line-height: 2; 
+    }
+    .bottom-button-section span{
+        margin-left: 11px;
+    }
+ 
+}

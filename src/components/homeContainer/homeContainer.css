@@ -1,0 +1,110 @@
+ 
+.home-container{
+    background-color: rgba(196, 196, 196, 0.459);
+    padding: 4.375rem 0;
+    height: 730px;
+}
+.home-header-container{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.home-header-container p{
+    color: #3a3a3a;
+    font-family: Sans;
+    font-size: larger;
+    font-weight: 500;
+    margin: 0;
+    max-width: 646px;
+}
+.home-header-container h2{
+    color: #3a3a3a;
+    font-family: Sans;
+    font-size: x-large;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 280px;
+}
+.home-content-container{
+    display: flex;
+    width: 1100px;
+    justify-content: space-between;
+    margin: auto;
+    padding: 80px 0;
+}
+.home-content, .home-content1, .home-content2{
+    height: 405px;
+    width: calc(100% - 40px);
+    background-color: white;
+    border-radius: 11px;
+    border: 2px solid rgb(196 196 196 / 86%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.home-content1{
+    margin-top: 65px;
+}
+.home-content-items{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.home-content-items h3{
+    margin-top: 30px;
+    text-align: center;
+    color: #3a3a3a;
+    font-family: 'gotham';
+    font-weight: 500;
+    max-width: 132px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+
+
+    
+    .home-header-container>h2{
+        font-family: 'Gotham';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+    }
+    .home-header-container>p{
+        font-family: 'Gotham';
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        max-width: 261px;
+        margin: auto;
+        padding-top: 10px;
+    }
+    .home-container{
+        height: 1436px;
+    }
+    .home-content-container{
+        padding-top: 30px;
+        width: 100%;
+        display: block;
+    }
+    .home-content>img{
+        margin: 38px 0 0 44px;
+    }
+    .home-content>h3{
+        margin-top: 30px;
+    }
+    .home-content1>img{
+        margin: 127px 0 0 18px;
+    }
+    .home-content1>h3, .home-content2>h3{
+        margin-top: 40px;
+    }
+    .home-content2>img{
+        margin: 57px 0 0 78px;
+    }
+
+}

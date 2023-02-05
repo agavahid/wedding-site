@@ -1,0 +1,73 @@
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+}
+.form-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 48px;
+    width: 300px;
+    margin: 10px auto;
+    padding: 0 10px;
+    border: 1px solid #f6f6f6;
+    border-radius: 5px;
+}
+.contactForm-field-icon{
+    width: 20px;
+    height: 20px;
+}
+.formType{
+    position: absolute;
+    left: 40px;
+}
+#calendar{
+    border: none;
+    outline: none;
+    padding: 0;
+    width: 66%;
+}
+.form-item:hover{
+    border: 1px solid #532BC3;
+}
+#textarea{
+    margin: 20px 20px 16px 20px;
+    padding: 14px 20px 29px 20px;
+    width: 270px;
+    height: 63px;
+    border-radius: 5px;
+    border: 1px solid #f6f6f6;
+    outline: none;
+    line-height: 1.5;
+    font-size: 14px;
+    font-family: 'Gotham';
+}
+.form-input{
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    width: 90%;
+    padding: 16px 0px;
+}
+.form-input.active +span{
+    transition: 0.3s;
+    top: -12px;
+    background-color: white;
+    font-size: 13px;
+}
+.form-input:focus + span {
+    transition: 0.3s;
+    top: -12px;
+    background-color: white;
+    font-size: 13px;
+}
+.form-input-span{
+    font-size: 12px;
+    top: 0;
+}

@@ -1,0 +1,63 @@
+
+/* Customize the label (the container) */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 17px;
+    line-height: 1.1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .filter-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    border-radius: 6px;
+    border: 1px solid #3a3a3a;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .filter-checkmark {
+    background-color: #fff;
+    border: 1px solid black;
+  }
+  
+  /* Create the filter-checkmark/indicator (hidden when not checked) */
+  .filter-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the filter-checkmark when checked */
+  .container input:checked ~ .filter-checkmark:after {
+    display: block;
+  }
+  
+  /* Style the filter-checkmark/indicator */
+  .container .filter-checkmark:after {
+    left: 4px;
+    top: 3.8px;
+    width: 10.5px;
+    height: 10.5px;
+    border-radius: 4px;
+    background-color: black;
+  }

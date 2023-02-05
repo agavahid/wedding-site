@@ -1,0 +1,102 @@
+
+
+.cataloge-item-container{
+    width: 1110px;
+    margin: auto;
+    height: 401px;
+    padding-top: 40px;
+}
+
+.cataloge-container-bottom{
+    height: 400px;
+    width: 1110px;  
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.item-container-header{
+    height: 65px;
+}
+
+.item-header-left{
+    float: left;
+    line-height: 1.74;
+}
+.item-header-left h3, p{
+    margin: 0;
+    padding: 0;
+    color: #3a3a3a;
+    font-family: Sans;
+    font-size: normal;
+    font-weight: 500;
+}
+.item-header-left h3{
+    font-weight: 900;
+    font-size: x-large;
+}
+
+.cataloge-header-right{
+    float: right;
+}
+.cataloge-header-right img{
+    margin-right: 15px;
+}
+.cataloge-header-right>a{
+    background-color: #532bc4;
+    border: 1px solid #532bc4;
+    padding:21px 28px 18px;
+    text-decoration: none;
+    color: #f7f7f7;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sans';
+    font-weight: 600;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    
+    .cataloge-item-container{
+        width: 100%;
+        
+    }
+    .item-container-header {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+        height: 50px;
+    }
+    .item-header-left>h3{
+        font-family: 'Gotham';
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #3a3a3a;
+    }
+    .item-header-left>p{
+        display: none;
+    }
+    .cataloge-header-right>a{
+        background-color: #fff;
+        border: none;
+        color: #532bc4;
+        padding: 0;
+        font-weight: 300;
+    }
+    .cataloge-header-right>a>img{
+        display: none;
+    }
+    
+    .cataloge-mobile-scroll-item{
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .cataloge-container-bottom{
+        height: 894vw;
+        
+    }
+}

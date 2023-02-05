@@ -1,0 +1,153 @@
+.wedding-hall-icon{
+    background: #fff;
+    box-shadow: 0 50px 75px rgb(0 0 0 / 3%);
+    border-radius: 1.25rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+    cursor: pointer;
+    border: 1px solid rgba(58,58,58,.15);
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    justify-content: center;
+    align-items: center;
+}
+.hearthIcon-normal{
+    width: 24px;
+    height: 24px;
+}
+
+.center-right{
+    border: 1px solid #f6f6f6;
+    width: 825px;
+    box-shadow: 0 50px 75px rgb(0 0 0 / 5%);
+    border-radius: 0.3125rem;
+    position: relative;
+    height: 190px;
+    margin-bottom: 10px;
+}
+.wedding-hall-text-section{
+    width: 555px;
+    height: 190px;
+    float: right;
+    position: relative;
+    background-color: #fff;
+    border-radius: 0px 10px 10px 0px;
+}
+.wedding-hall-img{
+    position: relative;
+    width: 270px;
+    height: 190px;
+    float: left;
+    overflow: hidden;
+}
+.wedding-hall-icon-mobile{
+    display: none;
+}
+.wedding-hall-icon-section{
+    position: absolute;
+    bottom: 25px;
+    right: 6px;
+    color: #fff;
+}
+.wedding-hall-first-icon{
+    float: left;
+}
+.wedding-hall-second-icon{
+    float: right;
+    margin-left:14.5px;
+}
+.count-span{
+    float: right;
+    margin-left: 4px;
+}
+
+.wedding-hall-img>img{
+    border-radius: 5px;
+}
+.wedding-hall-text-section>a{
+    text-decoration: none;
+}
+.wedding-hall-text-section-title{
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 170%;
+    color: #3a3a3a;
+    margin-left: 20px;
+}
+.wedding-hall-text-section-description{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 20px;
+    max-width: 450px;
+}
+.wedding-text-icon{
+    margin-top: 50px;
+    margin-left: 20px;
+}
+#wedding-a{
+    float: left;
+}
+#wedding-b{
+    float: left;
+    margin-left: 22px;
+    display: none;
+}
+#wedding-a>span, #wedding-b>span{
+    float: right;
+    margin-top: 5px;
+    margin-left: 7px;
+    font-size: small;
+}
+#wedding-a>img, #wedding-b>img{
+    float: left;
+}
+
+@media screen and (max-width: 768px) {
+
+    .wedding-hall-icon{
+        display: none;
+    }
+    .wedding-hall-icon-mobile{
+        display: block;
+    }
+    .center-right{
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 2px);
+        height: 100%;
+        height: 340px;
+        margin-bottom: 20px;
+    }
+    .wedding-hall-text-section{
+        height: 150px;
+        width: 100%;
+    }
+    .wedding-text-icon {
+        margin-top: 7px;
+    }
+    .center-right-main{
+        margin: 0 auto;
+        width: 100%;
+    }
+    .wedding-hall-img>img{
+        height: 190px;
+    }
+    .wedding-hall-text-section>h2{
+        padding: 15px 15px 10px 20px;
+        margin: 0;
+        line-height: 0;
+    }
+    .wedding-hall-img, .wedding-hall-img>img {
+        width: 100%;
+    }
+
+}

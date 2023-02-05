@@ -1,0 +1,36 @@
+#d{
+    float: right;
+}
+.finish{
+    height: 75px;
+    width: 1110px;
+    margin: auto;
+}
+#c{
+    float: left;
+}
+#c, #d{
+    font-weight: 400;
+    line-height: 7;
+}
+.wedpro{
+    color: #4220a3;
+    font-size: medium;
+    font-family: cursive;
+}
+@media screen and (max-width: 768px) {
+    .finish{
+        width: 100%;
+        height: 100%;
+        background-color: #4220a3;
+    }
+    #c, #d{
+        float: none;
+        color: white;
+        line-height: 3;
+    }
+    .wedpro{
+        color: whitesmoke;
+        font-size: 14px;
+    }
+}

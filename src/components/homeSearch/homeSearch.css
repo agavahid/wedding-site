@@ -1,0 +1,293 @@
+
+.search-section{
+    height: 500px;
+}
+.search-container{
+    background-image: url("https://wed.az/static/media/header-photo.4eea8941.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 100%;
+}
+.search-container img{
+    float: left;
+} 
+.search-content{
+    background-color: rgba(52,46,85,.5);
+    height: 100%;
+}
+.search-item{
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 1117px;
+    margin: 0 auto;
+    justify-content: center;
+}
+.search-item-header h1{ 
+    color: beige;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 1;
+    font-size: 44px;
+    font-family: sans-serif;
+    max-width: 575px;
+    margin: 0;
+}
+.search-item-header>p{
+    color: beige;
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    margin-top: 20px;
+}
+.button-section-item{
+    border-radius: 6px;
+    width: 350px;
+    height: 107px;
+    background-color: white;
+    z-index: 5;
+}
+.button-section-item1{
+    border-radius: 6px;
+    width: 350px;
+    height: 107px;
+    background-color: white;
+}
+.search-category-header>span, .button-section-item1-header > span{
+    color: black;
+    font-size: 12px;
+    color: rgb(71, 70, 70);
+    padding: 11px 21px;
+    display: block;
+}
+.search-category-head, .second-search-category-head{
+    width: calc(100% - 40px);
+    background-color: rgba(220,207,255,.25);  
+    height: 50px;
+    position: relative;
+    margin: auto;
+    bottom: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.search-category-head>span, .second-search-category-head>span{
+    float: left;
+    margin: 15px;
+}
+.search-category-head>img, .second-search-category-head>img{
+    float: right;
+    margin: 10px;
+}
+.caret, .second-caret{
+    width: 23px;
+    height: 23px;
+    transform: rotate(45deg);
+    background-color: #fff;
+    position: absolute;
+    top: 96px;
+    left: 42px;
+    z-index: 2;
+    display: block;
+}
+.caret{
+    top: 6px;
+    left: 42px;
+}
+.search-category-drp{
+    width: 960px;
+    height: 366px;
+    background-color: white;
+    display: block;
+    position: absolute;
+    z-index: 8;
+    top: 18px;
+    left: 20px;
+}
+.second-search-category-drp{
+    height: 60px;
+    background-color: white;
+    border-radius: 4px;
+    list-style: none;
+    position: absolute;
+    top: 3px;
+    left: 19px;
+    width: 80%;
+    padding: 12px 0 0px;
+    z-index: 4;
+}
+.second-search-category-drp li{
+    padding: 10px 12px;
+}
+.second-search-category-drp li:hover{
+    background-color: #3a3a3a0d
+}
+.second-search-category-drp>p{
+    font-weight: 100;
+    line-height: 2.8;
+    color: #3a3a3a;
+}
+.search-category-second-item-drp>p:hover{
+    background-color: #f7f7f7;
+}
+.second-caret{
+    top: 7px;
+    left: 40px;
+}
+.search-category-drp h3, .second-search-category-drp h3{
+    padding-top: 10px;
+    padding-left: 34px;
+    font-family: 'gotham';
+    font-size: 16px;
+    font-weight: 500;
+}
+.second-search-category-bottom{
+    display: block;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px 32px
+}
+.search-category-bottom{
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px 32px
+}
+.first-drp-item, .second-drp-item{
+    padding: 0;
+    display: flex; 
+    justify-content: space-between;
+}
+.first-drp-item li, .second-drp-item li{
+    padding: 13px 35px;
+    width: 170px;
+
+}
+.first-drp-item li, .second-drp-item li{ 
+    font-size: .875rem;
+    color: #3a3a3a;
+    display: flex;
+    align-items: center;
+}
+.first-drp-item li:hover, .second-drp-item li:hover{
+    background-color: rgba(220,207,255,0.25);
+}
+.second-drp-item{
+    flex-wrap: wrap;
+}
+.search-button{
+    background-color: #532bc4;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    padding: 47px 59.45px;
+    border: none;
+    cursor: pointer;
+}
+.button-section-item-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 870px;
+    margin-top: 50px;
+}
+.itemLink{
+    text-decoration: none;
+    color: #3a3a3a;
+}
+.mobile-search-content, .mobileSearchContainer{
+    display: none;
+}
+.middle-active-class, .mobile-search-content{
+    display: none;
+}
+
+@media screen and (max-width:760px) {
+    .button-section{
+        display: none;
+    }
+    .search-section{
+        height: 609px;
+    }
+    .search-item-header h1{
+        max-width: 248px;
+    }
+    .search-item-header  p{
+        max-width: 220px;
+    }
+    .mobile-search-container{
+        display: block;
+    }
+    .button-section-item-container{
+        display: block;
+        width: 100%;
+    }
+    .mobile-button-section-item-container{
+        margin-top: 12px;
+    }
+    .mobileSearchContainer{
+        display: block;
+    }
+    .button-section-items{
+        display: flex;
+    }
+    .button-section-item{
+        height: 100%;
+        width: 100%;
+    }
+    .search-container{
+        height: 58%;
+    }
+    .search-item{
+        width: 100%;
+    }
+    .search-item-header{
+        padding: 20px;
+    }
+    .search-item-header h1{
+        font-size: 24px;
+    }
+    .mobile-search-content{
+        display: block;
+        background-color: rgba(52,46,85,.5);
+        height: 100%;
+    }
+    .mobile-search-button-container{
+        width: 100%;
+    }
+    .search-category-head span, .second-search-category-head span{
+        font-size:14px;
+    }
+    .mobile-search-button{
+        width: calc(100% - 40px);
+        height: 50px;
+    }
+    .search-button{
+        padding: 0;
+        text-align: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .search-category-drp{
+        width: 90%;
+        overflow-y: scroll;
+    }
+    .first-drp-item{
+        flex-direction: column;
+    }
+    
+    @media screen and (min-width:483px){
+        .button-section-item{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            height: 180px;
+        }
+        .search-category{
+            width: 50%;
+        }
+    }
+    
+}
+

@@ -1,0 +1,69 @@
+
+@media screen and (max-width:768px) {
+
+    .mobile-header-right{
+        width: 36px;
+        height: 36px;
+        border-radius: 36px;
+        background-color: #f6f6f6;
+        text-align: center;
+        line-height: 3;
+    }
+    .defaultPageUser{
+        width: 24px;
+        height: 24px;
+    }
+    .mobile-header-right-contents{
+        position: absolute;
+        z-index: 555;
+        width: 0px;
+        height: 100%;
+        right: 0;
+        top: 0;
+        background-color: #fff;
+        visibility: hidden;
+        transition: 0.2s;
+        opacity: 0;
+        overflow: hidden;
+    }
+    .mobile-header-right-contents.active{
+        width: 210px;
+        visibility: visible;
+        opacity: 1;
+        background-color: #f7f7f7;
+    }
+    .user-picture-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 1px solid rgba(58,58,58,.1);;
+    }
+    .user-picture-container>span{
+        color: black;
+    }
+    .user-picture{
+        width: 36px;
+        height: 36px;
+        border-radius: 36px;
+        background-image: none;
+        float: right;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 7px 10px;
+    }
+    .login-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .login-container>a{
+        width: calc(100% - 40px);
+        text-align: left;
+        padding: 0 20px;
+        text-decoration: none;
+        color: #3a3a3a;
+    }
+    .login-container>a:hover{
+        background-color: #f7f7f7;
+    }
+}

@@ -1,0 +1,15 @@
+
+.cataloge-container{
+    height: 2350px;
+}
+@media screen and (max-width: 768px) {
+    .cataloge-container{
+        padding-left: 20px;
+        width: calc(100% - 20px);
+        height: 100%;
+        overflow: hidden;
+        margin-bottom: 75px;
+    }
+
+}
+

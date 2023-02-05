@@ -1,0 +1,430 @@
+
+.mission-header>h3{
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 27px;
+    line-height: 150%;
+    margin-bottom: 10px;
+}
+.mission-header>p{
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+}
+.mission{
+    height: 1840px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../assets/images/mainPage/mission-section-background.png');
+    position: relative;
+}
+#red, #blue{
+    position: absolute;
+    left: 77px;
+    top: 13px;
+    height: 46px;
+    border-radius: 46px;
+    background: #fff;
+    text-align: center;
+    line-height: 4.6;
+    display: inline-block;
+}
+#blue{
+    left: 590px;
+    top: 96px;
+    width: 32.85px;
+    height: 32.85px;
+    line-height: 3;
+}
+#orange{
+    position: absolute;
+    right: 172px;
+    top: 18px;
+    background: #fff;
+    text-align: center;
+    width: 59.6px;
+    height: 59.6px;
+    border-radius: 50%;
+    line-height: 6;
+    display: inline-block;
+}
+.mission-header{
+    text-align: center;
+    padding-top: 187px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+}
+.mission-middle{
+    width: 1110px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 40px;
+}
+.mission-middle-item{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: 550px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.mission-m-text-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 66px;
+}
+.mission-m-text-container>p{
+    color: #3a3a3a;
+    max-width: 266px;
+    margin-top: 25px;
+    font-size: large;
+}
+.mission-m-img-container{
+    margin-top: 85px;
+}
+
+.middle-bottom-item{
+    width: 1110px;
+    margin: auto;
+    padding-top: 40px;
+}
+.middle-bottom-item-header{
+    height: 75px;
+}
+.middle-bottom-header-left{
+    float: left;
+}
+.mission-m-text-container h3{
+    font-size: larger;
+}
+.middle-bottom-header-left>h3, .middle-bottom-text-section1>h3{
+    font-weight: 400;
+    font-family: 'Sans';
+    margin: 10px 0 10px;
+    font-size: x-large;
+    color: #3a3a3a;
+}
+.middle-bottom-items{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 26px;
+}
+.middle-bottom-first-top>img, .middle-bottom-first-top{
+    width: 540px;
+    height: 382px;
+    border-radius: 5px;
+}
+.middle-bottom-first{
+    width: 540px;   
+    height: 666px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.middle-bottom-first-top{
+    position: relative;
+}
+.small-group{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.middle-bottom-text-section1>h3{
+    font-weight: 600;
+    font-family: 'Sans';
+    margin: 10px 0 10px;
+    font-size: larger;
+    color: #3a3a3a;
+    margin: 0;
+}
+.middle-bottom-text-section1{
+    margin: 44px 37px 0px;
+}
+.middle-bottom-text-section1>p{
+    margin: 0;
+}
+.middle-bottom-img-text{
+    display: flex;
+    align-items: end;
+    margin-right: 10px;
+}
+.middle-bottom-img-text>span{
+    margin-left: 5px;
+}
+.middle-bottom-text-section1>p{
+    font-weight: 400;
+    font-family: 'Sans';
+    color: #3a3a3ae8;
+    margin-top: 8px;
+}
+.small-group{
+    font-weight: 300;
+    font-family: 'Sans';
+    color: #3a3a3a;
+    font-size: smaller;
+}
+.middle-bottom-hover{
+    position: absolute;
+    top: 171px;
+    left: 179px;
+    width: 200px;
+    height: 55px;
+    border: 2px solid #fff;
+    text-align: center;
+    border-radius: 5px;
+    transition: 1s;
+    opacity: 0;
+}
+.middle-bottom-hover>a{
+    text-decoration: none;
+    color: #fff;
+    margin-top: 4px;
+    line-height: 50px;
+    font-family: 'Sans';
+    font-weight: 700;
+}
+.middle-bottom-first-top:hover .middle-bottom-hover{
+    opacity: 1;
+}
+.customHeight{
+    height: 6px;
+}
+.missionSection-mySwiper{
+    width: 100%;
+}
+@media screen and (max-width: 768px) {
+    .home-container{
+        display: none;
+    }
+   
+    #blue{
+        left: 93px;
+        top: 35px;
+    }
+    #red, #orange{
+        display: none;
+    }
+    .mission {
+        height: 1542px;
+    }
+    .buttons{
+        height: 1050px;
+    }
+    .buttons-contents{
+        padding-top: 50px;
+    }
+    .bottom-location{
+        margin: 0;
+    }
+    .buttons, .buttons-contents{
+        width: 100%;
+    }
+    .second-row-menu1 li>a, .second-row-menu2 li>a, .second-row-menu3 li>a, .thirth-row-drp li>a, .second-row-item>h3, .thirth-row-item>h3{
+        padding: 0;
+    }    
+    .mission-header>h3{
+        font-family: 'Gotham';
+        font-size: 16px;
+        line-height: 150%;
+    }
+    .mission-header>p{
+        font-family: 'Gotham';
+        font-size: 12px;
+        line-height: 150%;
+    }
+    #mission-middle-item1, #mission-middle-item2, #mission-middle-item3 {
+        width: 280px;
+        margin-left: 20px;
+        display: none;
+        height: 440px;
+    }
+    .mission-middle{
+        width: calc(100% - 40px);
+        display: flex;
+    }
+    .mission-middle-item{
+        width: 100%;
+    }
+    .mission-m-text-container>p, .mission-m-text-container h3{
+        font-size: 16px;
+    }
+    #mission-middle-item1.active{
+        display: block;
+    }
+    .middle-active-class{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin: auto;
+        padding-top: 22px;
+        width: 50px;
+    }
+    .middle-bottom-header-left>p{
+        display: none;
+    }
+    .middle-bottom-header-left>h3{
+        font-family: 'Gotham';
+        font-size: 20px;
+        line-height: 24px;
+        margin: 0;
+    }
+    .middle-bottom-item-header{
+        height: 20px;
+        margin-top: 50px;
+    }
+    .middle-bottom-item{
+        padding-left: 20px;
+        width: calc(100% - 20px);
+        overflow-x: hidden;
+        
+    }
+    .middle-bottom-items{
+        width: calc(100% - 20px);
+        height: 486px;
+        overflow-y: scroll;
+    }
+    .middle-bottom-text-section1>h3{
+        font-weight: 500;
+        color: #3a3a3a;
+    }
+
+    #mission-middle-item1.active{
+        display: block;
+    }
+    .middle-active-class{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin: auto;
+        padding-top: 22px;
+        width: 50px;
+    }
+    .middle-bottom-header-left>p{
+        display: none;
+    }
+    .middle-bottom-header-left>h3{
+        font-family: 'Gotham';
+        font-size: 20px;
+        line-height: 24px;
+        margin: 0;
+    }
+    .middle-bottom-item-header{
+        height: 20px;
+        margin-top: 50px;
+    }
+    .middle-bottom-item{
+        padding-left: 20px;
+        width: calc(100% - 20px);
+        overflow-x: hidden;
+        
+    }
+
+
+
+
+    .buttons-first-content, .buttons-second-content{
+        height: 388px;
+        width: calc(100% - 40px);
+        margin-left: 20px;
+    }
+    .buttons-first-content-img, .buttons-second-content-img,  .buttons-first-regstration, .buttons-second-regstration{
+        position: unset;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+    .buttons-first-content-text, .buttons-second-content-text{
+        margin: auto;
+        position: unset;
+        margin-top: 30px;
+    }
+    .buttons-first-content{
+        margin-bottom: 20px;
+    }
+    .buttons-first-content-img>img, .buttons-second-content-img>img{
+        width: 78px;
+        height: 78px;
+    }
+    .buttons-first-content-img, .buttons-second-content-img{
+        top: 54px;
+        left: 103px;
+    }
+    .buttons-first-content-text{
+        top: 147px;
+        left: 8px;
+    }
+    .buttons-second-content-text{
+        left: 70px;
+        top: 150px;
+    }
+    .buttons-first-content-text>h3, .buttons-second-content-text>h3{
+        font-size: 16px;
+        font-family: 'Gotham';
+        color: #3a3a3a;
+    }
+    .buttons-first-content-text>p, .buttons-second-content-text>p{
+        font-size: 12px;
+        font-family: 'Gotham';
+        color: #3a3a3a;
+    }
+    .buttons-first-regstration{
+        top: 282px;
+        left: 40px;
+    }
+    .buttons-second-regstration{
+        top: 276px;
+        left: 42px;
+    }
+    .buttons{
+        height: 876px;
+    }
+
+    .middle-bottom-hover{
+        top: 71px;
+        left: 62px;
+    }
+    .middle-bottom-text-section1{
+        margin-top: 20px;
+    }
+    .middle-bottom-text-section1>h3{
+        font-family: 'Gotham';
+        font-size: 16px;
+        line-height: 150%;
+    }
+    .middle-bottom-text-section1>p{
+        font-family: 'Gotham';
+        font-size: 14px;
+        line-height: 150%;
+        max-width: 240px;
+        max-height: 105px;
+        text-overflow: ellipsis;
+    }
+    .middle-bottom-first{
+        height: 100%;
+        min-width: 280px;
+    }
+    .middle-bottom-first-top{
+        width: 100%;
+        height: 41%;
+    }
+    #item0{
+        margin-right: 10px;
+    }
+    .middle-bottom-first-top>img{
+        width: 100%;
+        height: 100%;
+    }
+}
