@@ -6,6 +6,7 @@ import { setLogOut } from '../../store/features/loginValue/loginValue';
 import { useDispatch, useSelector } from 'react-redux';
 import { MAINURL, APIS } from '../../configs/configs';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 export default function RightDropdownMobile(){
     const dispatch = useDispatch();
@@ -56,7 +57,7 @@ export default function RightDropdownMobile(){
                             <Link to='/profile/settings'>Tənzimləmələr</Link>
                             <Link to='/profile/likedList'>Seçdiklərim</Link>
                             <Link to='/profile/messages'>Mesajlar</Link>
-                            <Link onClick={()=> dispatch(setLogOut())}>Çıxış</Link>
+                            <Link to="#" onClick={()=> dispatch(setLogOut())}>Çıxış</Link>
                         </div>
                     </>
                         

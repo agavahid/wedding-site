@@ -1,4 +1,6 @@
-import './finish.css'
+import './finish.css';
+import React from 'react';
+
 export default function Finish(){
     return(
 

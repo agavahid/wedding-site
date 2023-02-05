@@ -49,7 +49,7 @@ export default function HomeSearch(){
     const targetRefTwo = useRef(null);
     useEffect(()=>{
         
-        document.addEventListener('click', handleClickOutSide, true)
+        // document.addEventListener('click', handleClickOutSide, true)
     },[])
     const handleClickOutSide = (e) =>{
         if(!targetRefOne.current.contains(e.target) || !targetRefTwo.current.contains(e.target)){
@@ -146,7 +146,7 @@ export default function HomeSearch(){
                                                         <ul className="second-search-category-drp">
                                                             {cityCategorie.map((index,i)=>
                                                                 <li key={i}>
-                                                                    <Link 
+                                                                    <Link to="#"
                                                                         onClick={()=> getItem(index.name)}
                                                                         type='button'
                                                                         className='itemLink'

@@ -1,7 +1,8 @@
 import './singlePageItem.css';
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// import "swiper/css";
+import 'swiper/swiper.min.css';
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 import heartIcon from '../assets//icons/pageIcons/heart-icon.png';
 import okIcon from '../assets/icons/pageIcons/ok.png';
 import facebookIcon from '../assets/icons/pageIcons/facebook.png';
@@ -17,6 +18,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import React from 'react';
 
 
 export default function SinglePageItem(){
@@ -240,7 +242,7 @@ export default function SinglePageItem(){
                                                 <p>{post.item.address.main[0].Address}</p>
                                             </div>
                                             <div className="content-common-content-bottom">
-                                                <Link className='callButton'>Zeng Et</Link>
+                                                <Link to="#" className='callButton'>Zeng Et</Link>
                                                 <div className='share-message-container'>
                                                     <Link className='share-message-content' to={''}>
                                                         <img src={WhatsuppIcon} alt="" />
@@ -323,8 +325,8 @@ export default function SinglePageItem(){
                                         <div className="social-items">
                                             <h3>Sosial Sebekeler</h3>
                                             <div className="social-icons">
-                                                <Link><img src={facebookIcon}/></Link>
-                                                <Link><img src={instagramIcon}/></Link>
+                                                <Link to="#"><img src={facebookIcon}/></Link>
+                                                <Link to="#"><img src={instagramIcon}/></Link>
                                             </div>
                                         </div>
                                         

@@ -2,6 +2,7 @@ import './bottomLocation.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 export default function BottomLocation(){
 

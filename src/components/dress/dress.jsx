@@ -301,7 +301,7 @@ export default function Dress(){
                                 className="searchButton"
                                 type="button"
                             >
-                                <Link className="searchLink">Axtar</Link>
+                                <Link to="#" className="searchLink">Axtar</Link>
                             </button>
                         </div>
                     </div>
@@ -341,13 +341,13 @@ export default function Dress(){
 
                                     <ul className="pagination-ul">
                                         <li className="pag-item">
-                                            <Link className="page-link" id="previous" aria-label="Previous">
+                                            <Link to="#" className="page-link" id="previous" aria-label="Previous">
                                             <img src={leftArrowIcon}/></Link>
                                         </li> 
                                         {
                                             pageItems.first_page_url !== null &&  pageItems.first_page_url !== pageItems.last_page_url ?
                                                 <li className="pag-item"  onClick={()=> setIsClassActive(1)}>
-                                                    <Link 
+                                                    <Link  to="#"
                                                         className={isClassActive === 1 ? "page-link active" : "page-link"} 
                                                         onClick={()=>dispatch(setPage(pageItems.first_page_url))}
                                                     >1</Link>
@@ -357,14 +357,14 @@ export default function Dress(){
                                         {
                                             pageItems.last_page >= 2 && pageItems.next_page_url !== null ?
                                                 <li className="pag-item"  onClick={()=> setIsClassActive(2)}>
-                                                    <Link 
+                                                    <Link  to="#"
                                                         className={isClassActive === 2 ? "page-link active" : "page-link"}
                                                         onClick={()=>dispatch(setPage(pageItems.next_page_url))}
                                                     >2</Link>
                                                 </li>
                                             : 
                                             <li className="pag-item"  onClick={()=> setIsClassActive(2)}>
-                                                    <Link 
+                                                    <Link to="#"
                                                         className={isClassActive === 2 ? "page-link active" : "page-link"}
                                                         onClick={()=>dispatch(setPage(pageItems.prev_page_url))}
                                                     >2</Link>
@@ -373,7 +373,7 @@ export default function Dress(){
                                         {
                                             pageItems.last_page === 3 ?
                                                 <li className="pag-item"  onClick={()=> setIsClassActive(3)}>
-                                                    <Link 
+                                                    <Link to="#"
                                                         className={isClassActive === 3 ? "page-link active" : "page-link"} 
                                                         onClick={()=>dispatch(setPage(pageItems.last_page_url))}
                                                     >3</Link>
@@ -381,7 +381,7 @@ export default function Dress(){
                                             :null
                                         }
                                         <li className="pag-item">
-                                            <Link className="page-link" id="next" aria-label="Next">
+                                            <Link to="#" className="page-link" id="next" aria-label="Next">
                                             <img src={rightArrowIcon}/></Link>
                                         </li>
                                     </ul>

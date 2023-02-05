@@ -1,4 +1,5 @@
 import './socialSection.css';
+import React from 'react';
 
 export default function SocialSection(){
     return(

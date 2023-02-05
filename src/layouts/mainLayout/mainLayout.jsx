@@ -2,6 +2,7 @@ import './mainLayout.css';
 import HeaderNavBar from '../../components/headerNavBar/headerNavBar';
 import FooterLayout from '../footerLayout/footerLayout';
 import { useSelector } from 'react-redux';
+import React from 'react';
 
 export default function MainLayout({children}) {
 

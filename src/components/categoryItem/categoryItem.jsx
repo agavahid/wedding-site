@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import hearthIcon from '../assets/icons/pageIcons/heart-icon.png';
 import { MAINURL, APIS, CdnUrl } from '../../configs/configs';
+import React from 'react';
 
 
 export default function CategoryItem({categorySection}){

@@ -11,11 +11,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom"; 
 import Cookies from 'universal-cookie';
 import axios from 'axios';
+import { useDetectClickOutside } from 'react-detect-click-outside';
 
 export default function HeaderNavBar(){
     
     const refOne = useRef(null);
-    const refTwo = useRef(null);
+    
     const cookies = new Cookies();
     const dispatch = useDispatch();
     const logValue = useSelector((state) => state.login.isLoggedIn);
@@ -23,6 +24,22 @@ export default function HeaderNavBar(){
     const [post, setPost] = useState([]);
     const [showDrp, setDrp] = useState(false);
     const [langItem, showLangItem] = useState(false);
+
+    // code commenting
+
+    /**
+     * Dropdown funtions start
+     */
+
+    const closeDropdown = () => {
+        setDrp(false);
+    }
+
+    const ref = useDetectClickOutside({ onTriggered: closeDropdown });
+
+    /**
+     * Dropdown funtions end
+     */
 
     useEffect(()=>{
         axios({
@@ -38,7 +55,7 @@ export default function HeaderNavBar(){
             setPost(response.data.data);
             
         });
-    },[])
+    },[]);
     
     
     function logOut(e){
@@ -47,24 +64,6 @@ export default function HeaderNavBar(){
         dispatch(setLogOut());
     }
 
-    useEffect(()=> {
-        document.addEventListener('click', handleClickOutSide, false)
-    },[])
-    
-    const handleClickOutSide = (e) =>{
-        console.log('BUra', showDrp)
-        setDrp(false)
-        if(showDrp) {
-            setDrp(false)
-        }
-        /*
-        if(!refOne.current.contains(e.target)){
-            showLangItem(false)
-        }else if(!refTwo.current.contains(e.target)){
-            setDrp(false)
-            console.log('refTwo dan kenara')
-        }  */
-    }
     return(
 
         <div className='top'>
@@ -121,7 +120,7 @@ export default function HeaderNavBar(){
                         
                     </div>
                     <div className="header-top-right2">
-                        <div className="header-top-right2-container" ref={refTwo}>
+                        <div className="header-top-right2-container" ref={ref}>
                             <span onClick={(e) => {e.stopPropagation(); setDrp(!showDrp)}}>Hesabim</span>
                             {showDrp === false ? null :
 

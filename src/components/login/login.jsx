@@ -4,6 +4,7 @@ import googleIcon from '../assets/icons/pageIcons/google.jpg'
 import LoginSection from '../loginForm/loginForm';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import React from 'react';
 
 
 export default function Login(){

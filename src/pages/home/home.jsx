@@ -1,3 +1,4 @@
+import React from 'react';
 import HomeSearch from '../../components/homeSearch/homeSearch';
 import HomeCategory from '../../components/homeCategory/homeCategory';
 import HomeContainer from '../../components/homeContainer/homeContainer'

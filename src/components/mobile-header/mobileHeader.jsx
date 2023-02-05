@@ -4,6 +4,7 @@ import LeftDropdownMobile from "../leftdropdown-mobile/leftDropdownMobile";
 import MainLogo from '../assets/images/mainPage/mainLogo.png';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import React from 'react';
 
 export default function MobileHeader(){
     

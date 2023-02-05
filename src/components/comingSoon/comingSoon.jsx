@@ -1,7 +1,7 @@
-import './comingSoon.css'
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom"
+import './comingSoon.css';
+import { Link } from "react-router-dom"
 import ComingSoonImg from '../assets/images/slugItems/comingSoon.svg';
+import React from 'react';
 
 export default function ComingSoon(){
     

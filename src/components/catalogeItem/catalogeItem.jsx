@@ -1,6 +1,7 @@
 import './catalogeItem.css';
 import { Link } from 'react-router-dom';
 import CategoryItem from '../categoryItem/categoryItem';
+import React from 'react';
 
 export default function CatalogeItem({catalogeSection}){
 

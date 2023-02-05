@@ -1,5 +1,6 @@
 import './homeContainer.css';
 import DefaultSvg from '../assets/images/mainPage/default-home-container-icon.png';
+import React from 'react';
 
 export default function HomeContainer(){
     return(

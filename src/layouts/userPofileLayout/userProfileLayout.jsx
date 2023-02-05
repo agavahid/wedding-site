@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from 'react';
 import { Outlet } from "react-router-dom";
 import UserProfHeader from "../../components/userProfileHeader/userProfileHeader";
 import UserProfileSideBar from "../../components/userProfileSideBar/userProfileSideBar";

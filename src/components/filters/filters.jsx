@@ -2,6 +2,7 @@ import './filters.css'
 import { useState } from "react";
 import listIcon from '../../components/assets/icons/listIcons/Vector 8.svg';
 import FilterItem from "../filter-item/filterItem";
+import React from 'react';
 
 export default function FilterList({submenuItem, getValue, i, checkedItems}){
     

@@ -2,6 +2,7 @@ import './bottomItems.css'
 import FirstContentImg from '../assets/images/mainPage/button-content-img.png';
 import SecondContentImg from '../assets/images/mainPage/button-content-img1.png';
 import {Link} from 'react-router-dom';
+import React from 'react';
 
 export default function BottomItems(){
     return(

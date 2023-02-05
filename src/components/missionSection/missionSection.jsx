@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { CdnUrl, APIS } from '../../configs/configs';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
+import React from 'react';
 
 
 

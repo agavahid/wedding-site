@@ -84,7 +84,7 @@ export default function LeftDropdownMobile(){
                                                         :
                                                         menu.categories.map((item,i) => 
                                                             <li key={i}>
-                                                                <Link
+                                                                <Link 
                                                                     to={menu.name + '/' + item.urlTitle}
                                                                     className='mobile-item-content-link' 
                                                                 >

@@ -2,6 +2,7 @@ import './catalogeContainer.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import CatalogeItem from '../catalogeItem/catalogeItem';
+import React from 'react';
 
 
 export default function CatalogeContainer(){
