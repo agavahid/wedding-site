@@ -10,12 +10,15 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import React from 'react';
+import Cookies  from 'universal-cookie';
 
 export default function SectionItems({sectionItem}){
 
     const [click, setClick] = useState(false);
     const isLogged = useSelector((param) => param.login.isLoggedIn);
     const navigate = useNavigate();
+    const cookies = new Cookies();
+
     useEffect(()=>{
         
         if(sectionItem.wishlist === 1){
@@ -37,7 +40,7 @@ export default function SectionItems({sectionItem}){
                 service_id: id
             },
             headers: {
-                Authorization : `bearer ${localStorage.getItem('userToken')}`
+                Authorization : `bearer ${cookies.get('userToken')}`
             }
               
         })
