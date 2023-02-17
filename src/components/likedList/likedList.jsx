@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import React from 'react';
+import Cookies  from 'universal-cookie';
 
 export default function LikedList(){
 
@@ -13,13 +14,14 @@ export default function LikedList(){
     const [defaultItem, setDefaultItem] = useState('Əvvəldən sona');
     const [showSubmenu, setShowSubmenu] = useState(false);
     const [render, setRender] = useState(false);
+    const cookies = new Cookies();
     
     useEffect(()=>{
         axios({
             method: 'get',
             url: 'https://api.wed.az/edu/wishlist/getall?sort=time_asc',
             headers: {
-                Authorization : `bearer ${localStorage.getItem('userToken')}`
+                Authorization : `bearer ${cookies.get('userToken')}`
             }
         })
         .then((response)=>
@@ -38,7 +40,7 @@ export default function LikedList(){
                 service_id: id
             },
             headers: {
-                Authorization : `bearer ${localStorage.getItem('userToken')}`
+                Authorization : `bearer ${cookies.get('userToken')}`
             }
               
         })

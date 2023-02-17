@@ -19,7 +19,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import React from 'react';
-
+import Cookies  from 'universal-cookie';
 
 export default function SinglePageItem(){
     const {slug} = useParams();
@@ -32,6 +32,7 @@ export default function SinglePageItem(){
 
     const isLogged = useSelector((login)=> login.login.isLoggedIn);
     const navigate = useNavigate();
+    const cookies = new Cookies();
 
     const[aboutList, setAboutList] = useState([]);
     const[servicesList, setServicesList] = useState([]);
@@ -49,7 +50,7 @@ export default function SinglePageItem(){
                 service_id: id
             },
             headers: {
-                Authorization : `bearer ${localStorage.getItem('userToken')}`
+                Authorization : `bearer ${cookies.get('userToken')}`
             }
               
         })
@@ -63,7 +64,7 @@ export default function SinglePageItem(){
             method: 'get',
             url: `${SinglePageUrl}${slug}`,
             headers: {
-                Authorization : `bearer ${localStorage.getItem('userToken')}`
+                Authorization : `bearer ${cookies.get('userToken')}`
             }
         })
             .then((response)=>{
