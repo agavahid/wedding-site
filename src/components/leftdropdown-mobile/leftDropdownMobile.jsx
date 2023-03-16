@@ -44,7 +44,9 @@ export default function LeftDropdownMobile(){
         dispatch(setActive());
     }
     
-
+    function forstopPropagation(e){
+        e.stopPropagation()
+    }
     return(
         <>
             
@@ -60,7 +62,7 @@ export default function LeftDropdownMobile(){
                         </div>
                         <div className="hover-item">
                             <ul className="mobile-header-left-ul">
-                                <li className="mobile-header-left-ul-item">
+                                <li className="mobile-header-left-ul-item"  onClick={e => forstopPropagation(e)}>
                                     <div 
                                         className='mobile-item-header'
                                         onClick={()=>{setFirstDrpList(!showFirstDrpList)}}
@@ -98,7 +100,7 @@ export default function LeftDropdownMobile(){
                                         </div>
                                 </li>
             
-                                <li className="mobile-header-left-ul-item">
+                                <li className="mobile-header-left-ul-item" onClick={e => forstopPropagation(e)}>
                                     <div 
                                         className='mobile-item-header'
                                         onClick={()=> setSecondDrpList(!showSecondDrpList)}
@@ -137,20 +139,20 @@ export default function LeftDropdownMobile(){
 
                                 </li>
 
-                                <li className="mobile-header-left-ul-item">
+                                <li className="mobile-header-left-ul-item" onClick={e => forstopPropagation(e)}>
                                     <Link className="mobile-item-header" to='/comingSoon'>
                                         <img className="mobile-item-header-img" src={MAINURL+APIS.staticMedia+"/Frame%202.5.24dfe8d2.svg"} alt=""/>
                                         <span>BALAYI</span>
                                     </Link>
                                 </li>
 
-                                <li className="mobile-header-left-ul-item">
+                                <li className="mobile-header-left-ul-item" onClick={e => forstopPropagation(e)}>
                                     <Link className="mobile-item-header" to='/comingSoon'>
                                         <img className="mobile-item-header-img" src={MAINURL+APIS.staticMedia+"/Frame%202.6.f5c8166e.svg"} alt=""/>
                                         <span>SIYAHI</span>
                                     </Link>
                                 </li>
-                                <li className="mobile-header-left-ul-item">
+                                <li className="mobile-header-left-ul-item" onClick={e => forstopPropagation(e)}>
                                     <Link className="mobile-item-header" to='/comingSoon'>
                                         <img className="mobile-item-header-img" src={MAINURL+APIS.staticMedia+"/Frame%203.c8f5cdaf.svg"} alt=""/>
                                         <span>KAMPANYALAR</span>
