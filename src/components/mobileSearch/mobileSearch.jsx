@@ -40,6 +40,10 @@ export default function MobileSearchSection(){
         }
         
         setToLinkName(itemName)
+        setFirstSubmenuWiev(false)
+    }
+    const getCityItem = () => {
+        setSecondSubmenuWiev(false)
     }
     const goToLink = () => {
         return(navigate(toLink))
@@ -112,6 +116,7 @@ export default function MobileSearchSection(){
                 <div className="mobile-button-section-item">
                     <div className="mobile-search-category-header">
                         <span>Seher</span>
+                        
                     </div>
                     <div className="mobile-search-category">
                         <div onClick={()=> setSecondSubmenuWiev(!secondSubmenuWiev)}
@@ -127,7 +132,7 @@ export default function MobileSearchSection(){
                                         {cityCategorie.map((index,i)=>
                                             <li key={i}>
                                                 <Link to="#"
-                                                    onClick={()=> getItem(index.name)}
+                                                    onClick={()=> getCityItem()}
                                                     type='button'
                                                     className='mobile-itemLink'
                                                 >

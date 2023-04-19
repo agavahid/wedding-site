@@ -27,6 +27,7 @@ export default function HomeSearch(){
                 setUrl(response.data.data)
             )
     },[])
+    
     useEffect(()=>{
         axios.get("https://api.wed.az/edu/general/getbasecities")
             .then((response)=>
@@ -39,24 +40,35 @@ export default function HomeSearch(){
         }
         
         setToLinkName(itemName)
+        setFirstSubmenuWiev(false)
+        setSecondSubmenuWiev(false)
     }
     const goToLink = () => {
         return(navigate(toLink))
     }
-
-
+    const getCityItem = () => {
+        setSecondSubmenuWiev(false)
+    }
+    
     const targetRefOne = useRef(null);
     const targetRefTwo = useRef(null);
+    
     useEffect(()=>{
-        
-        // document.addEventListener('click', handleClickOutSide, true)
+        document.addEventListener('click', handleClickOutSide, true)
+
+        return () => document.removeEventListener('click', handleClickOutSide, true)
     },[])
+
     const handleClickOutSide = (e) =>{
-        if(!targetRefOne.current.contains(e.target) || !targetRefTwo.current.contains(e.target)){
+        if(!targetRefOne.current.contains(e.target)){
+
             setFirstSubmenuWiev(false);
+            
+        }else if(!targetRefTwo.current.contains(e.target)){
             setSecondSubmenuWiev(false);
         }
     }
+    
     return(
 
         <div className="search-section"> 
@@ -147,7 +159,7 @@ export default function HomeSearch(){
                                                             {cityCategorie.map((index,i)=>
                                                                 <li key={i}>
                                                                     <Link to="#"
-                                                                        onClick={()=> getItem(index.name)}
+                                                                        onClick={()=> getCityItem()}
                                                                         type='button'
                                                                         className='itemLink'
                                                                     >

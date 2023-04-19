@@ -102,11 +102,11 @@
 .mobile-second-search-category-bottom{
     display: block;
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px 32px
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 60px 40px 32px
 }
 .mobile-search-category-bottom{
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px 32px
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 60px 40px 32px
 }
 .mobile-first-drp-item, .mobile-second-drp-item{
     padding: 0;

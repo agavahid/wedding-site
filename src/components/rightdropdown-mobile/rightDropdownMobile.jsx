@@ -6,19 +6,38 @@ import { setLogOut } from '../../store/features/loginValue/loginValue';
 import { useDispatch, useSelector } from 'react-redux';
 import { MAINURL, APIS } from '../../configs/configs';
 import { Link } from 'react-router-dom';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export default function RightDropdownMobile(){
+    
     const dispatch = useDispatch();
     const isActive = useSelector((state) => state.isRightActive.activity);
     const isLogged = useSelector((state) => state.login.isLoggedIn);
 
     
+    const secondTargetRef = useRef(null);
+    
+    /*
+    useEffect(()=>{
+        document.addEventListener('click', handleClickOutSide, true)
+
+        return () => document.removeEventListener('click', handleClickOutSide, true)
+    },[])
+
+    const handleClickOutSide = (e) =>{
+        if(!secondTargetRef.current.contains(e.target)){
+
+            dispatch(setActive())
+            
+        }
+    }
+    */
    
     return(
         <div 
             onClick={()=> dispatch(setActive())}
             className="mobile-header-right"
+            ref={secondTargetRef}
         >   
             <img 
                 src={`${MAINURL}${APIS.staticMedia}/Frame%202.11.6b5508c9.svg`} 

@@ -5,7 +5,7 @@ import closeButtonicon from '../assets/icons/headericons/closeButton.png';
 import { setActive } from '../../store/features/isHeaderActive/isLeftDrpActive';
 import { useDispatch, useSelector } from 'react-redux';
 import { URL, APIS, MAINURL } from '../../configs/configs';
-import React, {useState, useEffect } from 'react';
+import React, {useState, useEffect, useRef } from 'react';
 import { Link } from "react-router-dom"; 
 import axios from 'axios';
 
@@ -18,7 +18,8 @@ export default function LeftDropdownMobile(){
     const [post, setPost] = useState([]);
     const [showDrp, setDrp] = useState(false);
     const [showFirstDrpList, setFirstDrpList] = useState(false);
-    const [showSecondDrpList, setSecondDrpList] = useState(false);
+    const [showSecondDrpList, setSecondDrpList] = useState(false); 
+    
 
 
     useEffect(() => {
@@ -47,16 +48,33 @@ export default function LeftDropdownMobile(){
     function forstopPropagation(e){
         e.stopPropagation()
     }
+    
+    const firstTargetRef = useRef(null);
+    /*
+    useEffect(()=>{
+        document.addEventListener('click', handleClickOutSide, true)
+
+        return () => document.removeEventListener('click', handleClickOutSide, true)
+    },[])
+
+    const handleClickOutSide = (e) =>{
+        if(!firstTargetRef.current.contains(e.target)){
+            dispatch(setActive())
+            
+        }
+    }
+    */
+
     return(
         <>
             
             
         
-            <div className="mobile-header-left" onClick={openSideMenu}>
+            <div className="mobile-header-left" onClick={openSideMenu} ref={firstTargetRef}>
 
                 <img src={SideBar} />
                 
-                    <div className={isActive === false ? "mobile-header-left-drp" : "mobile-header-left-drp active"}>
+                    <div className={isActive === false ? "mobile-header-left-drp" : "mobile-header-left-drp active"} >
                         <div className="close-item"  onClick={closeSideMenu}>
                             <img src={closeButtonicon}></img>
                         </div>
