@@ -14,7 +14,15 @@ export default function RightDropdownMobile(){
     const isActive = useSelector((state) => state.isRightActive.activity);
     const isLogged = useSelector((state) => state.login.isLoggedIn);
 
-    
+    const openSideMenu = () => {
+        document.body.style.overflow = 'hidden';
+        dispatch(setActive()); 
+    }
+    useEffect(()=>{
+        if(isActive === false){
+            document.body.style.overflow = 'auto';
+        }
+    },[isActive])
     const secondTargetRef = useRef(null);
     
     /*
@@ -35,7 +43,7 @@ export default function RightDropdownMobile(){
    
     return(
         <div 
-            onClick={()=> dispatch(setActive())}
+            onClick={()=> openSideMenu()}
             className="mobile-header-right"
             ref={secondTargetRef}
         >   

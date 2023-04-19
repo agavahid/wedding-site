@@ -32,7 +32,7 @@ export default function LeftDropdownMobile(){
     
     const openSideMenu = () => {
         document.body.style.overflow = 'hidden';
-        dispatch(setActive());
+        dispatch(setActive()); 
     }
 
     // eventPreventDefault
