@@ -1,6 +1,6 @@
 
 .mission-header>h3{
-    font-family: 'Gotham';
+    font-family: 'sans-serif';
     font-style: normal;
     font-weight: 600;
     font-size: 27px;
@@ -8,7 +8,7 @@
     margin-bottom: 10px;
 }
 .mission-header>p{
-    font-family: 'Gotham';
+    font-family: 'sans-serif';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
@@ -111,7 +111,7 @@
 }
 .middle-bottom-header-left>h3, .middle-bottom-text-section1>h3{
     font-weight: 400;
-    font-family: 'Sans';
+    font-family: 'sans-serif';
     margin: 10px 0 10px;
     font-size: x-large;
     color: #3a3a3a;
@@ -142,7 +142,7 @@
 }
 .middle-bottom-text-section1>h3{
     font-weight: 600;
-    font-family: 'Sans';
+    font-family: 'sans-serif';
     margin: 10px 0 10px;
     font-size: larger;
     color: #3a3a3a;
@@ -164,13 +164,13 @@
 }
 .middle-bottom-text-section1>p{
     font-weight: 400;
-    font-family: 'Sans';
+    font-family: 'sans-serif';
     color: #3a3a3ae8;
     margin-top: 8px;
 }
 .small-group{
     font-weight: 300;
-    font-family: 'Sans';
+    font-family: 'sans-serif';
     color: #3a3a3a;
     font-size: smaller;
 }
@@ -191,7 +191,7 @@
     color: #fff;
     margin-top: 4px;
     line-height: 50px;
-    font-family: 'Sans';
+    font-family: 'sans-serif';
     font-weight: 700;
 }
 .middle-bottom-first-top:hover .middle-bottom-hover{
@@ -234,12 +234,12 @@
         padding: 0;
     }    
     .mission-header>h3{
-        font-family: 'Gotham';
+        font-family: 'sans-serif';
         font-size: 16px;
         line-height: 150%;
     }
     .mission-header>p{
-        font-family: 'Gotham';
+        font-family: 'sans-serif';
         font-size: 12px;
         line-height: 150%;
     }
@@ -275,7 +275,7 @@
         display: none;
     }
     .middle-bottom-header-left>h3{
-        font-family: 'Gotham';
+        font-family: 'sans-serif';
         font-size: 20px;
         line-height: 24px;
         margin: 0;
@@ -316,7 +316,7 @@
         display: none;
     }
     .middle-bottom-header-left>h3{
-        font-family: 'Gotham';
+        font-family: 'sans-serif';
         font-size: 20px;
         line-height: 24px;
         margin: 0;
@@ -372,12 +372,12 @@
     }
     .buttons-first-content-text>h3, .buttons-second-content-text>h3{
         font-size: 16px;
-        font-family: 'Gotham';
+        font-family: 'sans-serif';
         color: #3a3a3a;
     }
     .buttons-first-content-text>p, .buttons-second-content-text>p{
         font-size: 12px;
-        font-family: 'Gotham';
+        font-family: 'sans-serif';
         color: #3a3a3a;
     }
     .buttons-first-regstration{
@@ -400,12 +400,12 @@
         margin-top: 20px;
     }
     .middle-bottom-text-section1>h3{
-        font-family: 'Gotham';
+        font-family: 'sans-serif';
         font-size: 16px;
         line-height: 150%;
     }
     .middle-bottom-text-section1>p{
-        font-family: 'Gotham';
+        font-family: 'sans-serif';
         font-size: 14px;
         line-height: 150%;
         max-width: 240px;

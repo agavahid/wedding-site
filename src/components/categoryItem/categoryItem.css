@@ -47,9 +47,16 @@
     line-height: 1.5;
     color: #f7f7f7;
 }
-.cataloge-text>h3, .mission-header>h3, .mission-m-text-container>h3{
+.cataloge-text>h3{
     color: #3a3a3a;
-    font-family: Sans;
+    font-family: 'sans-serif';
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+}
+.mission-header>h3, .mission-m-text-container>h3{
+    color: #3a3a3a;
+    font-family: 'sans-serif';
     font-size: medium;
     font-weight: 600;
     margin: 0;
@@ -58,7 +65,7 @@
     display: inline-block;
     line-height: 2;
     color: #3a3a3a;
-    font-family: Sans;
+    font-family: 'sans-serif';
     font-size: smaller;
     font-weight: 400;
     letter-spacing: 0.2px;

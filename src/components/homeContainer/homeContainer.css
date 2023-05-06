@@ -13,7 +13,7 @@
 }
 .home-header-container p{
     color: #3a3a3a;
-    font-family: Sans;
+    font-family: 'sans-serif';
     font-size: larger;
     font-weight: 500;
     margin: 0;
@@ -21,7 +21,7 @@
 }
 .home-header-container h2{
     color: #3a3a3a;
-    font-family: Sans;
+    font-family: 'sans-serif';
     font-size: x-large;
     line-height: 1.6;
     margin: 0;
@@ -57,7 +57,7 @@
     margin-top: 30px;
     text-align: center;
     color: #3a3a3a;
-    font-family: 'gotham';
+    font-family: 'sans-serif';
     font-weight: 500;
     max-width: 132px;
 }
@@ -69,13 +69,13 @@
 
     
     .home-header-container>h2{
-        font-family: 'Gotham';
+        font-family: 'sans-serif';
         font-weight: 500;
         font-size: 16px;
         line-height: 150%;
     }
     .home-header-container>p{
-        font-family: 'Gotham';
+        font-family: 'sans-serif';
         font-weight: 400;
         font-size: 12px;
         line-height: 150%;

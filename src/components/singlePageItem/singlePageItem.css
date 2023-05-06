@@ -91,7 +91,7 @@
     color: #3A3A3A;
     margin: 0;
     padding: 0;
-    font-family: 'Gotham';
+    font-family: 'sans-serif';
     font-size: 24px;
     font-weight: 500;
 }
@@ -252,7 +252,7 @@
     padding-top: 50px;
 }
 .about-us>p{
-    font-family: 'Gotham';
+    font-family: 'sans-serif';
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;

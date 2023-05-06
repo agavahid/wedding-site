@@ -16,7 +16,7 @@
 .wedpro{
     color: #4220a3;
     font-size: medium;
-    font-family: cursive;
+    font-family: 'sans-serif';
 }
 @media screen and (max-width: 768px) {
     .finish{

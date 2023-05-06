@@ -1,10 +1,10 @@
+
 .header-top{
     display: flex;
     justify-content: space-between;
     width: 1110px;
     margin: auto;
     padding: 0.75rem 0rem; 
-   
 }
 .header-top-left{
     display: flex;
@@ -81,7 +81,7 @@
 .header-dropdown-items li{
     padding: 15.25px 13px;
     color: rgba(58,58,58,.5);
-    font-family: 'gotham','Verdana','Geneva','Tahoma', 'sans-serif';
+    font-family: 'sans-serif';
     font-weight: 500;
 }
 
@@ -108,7 +108,7 @@
 .header-top-right2{
     background-color:#f7f7f7;
     width: 120px;
-    font-family: roboto;
+    font-family: 'sans-serif';
     font-style: normal;
     line-height: 18px;
     justify-content: center;
@@ -159,9 +159,9 @@
     display: block;
     text-align: left;
     padding: 12px 40px;
-    font-family: sans-serif;    
-    font-size: 14px;
-    font-weight: 300;
+    font-family: 'sans-serif';    
+    font-size: 16px;
+    font-weight: 500;
 }
 .header-top-right2-drp a:hover{
     background-color: rgba(220,207,255,.25);
@@ -177,6 +177,9 @@
     position: relative;
     z-index: 44;
 }
+.header-top-right2-container{
+    font-size: 17.5px;
+}
 .header-top-right-drpMenu{
     display: block;
 }
@@ -185,6 +188,7 @@
     justify-content: center;
     cursor: pointer;
 }
+
 .main-ul{
     display: flex;
     justify-content: space-between;
@@ -193,7 +197,6 @@
     margin: auto;
     height: 52px;
     padding: 0;
-    font-family: sans-serif;
     letter-spacing: 0.23px;
 }
 .menu{
