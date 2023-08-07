@@ -7,10 +7,10 @@ import formIcon from '../assets/icons/cardicons/letterIcon.svg';
 import usersIcon from '../assets/icons/cardicons/users.svg';
 
 import SinglePageFormInput from '../inputs/singlePageFormInput/singlePageFormInput';
-import React from 'react';
 import { Formik, Form, useFormik } from 'formik';
 import axios from 'axios';
-
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 
 
@@ -18,6 +18,7 @@ export default function SinglePageContactForm(){
     
     
     
+    const form = useRef();
 
     
 

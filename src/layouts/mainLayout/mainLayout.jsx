@@ -8,11 +8,12 @@ export default function MainLayout({children}) {
 
     
     const isActive = useSelector((state) => state.isLeftActive.activity);
-    console.log(isActive)
+    
+    
     return(
         <div className={isActive ? 'hidden' : ''} >
             <HeaderNavBar/>
-            {children}
+            {children} 
             <FooterLayout/>
         </div>
 

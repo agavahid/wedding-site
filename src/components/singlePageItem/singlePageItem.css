@@ -120,6 +120,7 @@
     border-right: 1px solid rgba(58,58,58,.15);
     position: relative;
     cursor: pointer;
+    z-index: 333;
 }
 .work-hour-container{
     position: absolute;
@@ -210,6 +211,10 @@
     padding-bottom: 100px;
     background-color: white;
    
+}
+.mockPhotoContainer>img{
+    width: 100%;
+    object-fit: fill;
 }
 .middle-photo-container{
     /*width: 675px;

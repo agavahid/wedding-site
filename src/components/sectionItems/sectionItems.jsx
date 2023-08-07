@@ -5,35 +5,42 @@ import HearthIcon from '../assets/icons/cardicons/heart-icon.png';
 
 import { Photo, MAINURL, APIS } from '../../configs/configs';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import React from 'react';
 import Cookies  from 'universal-cookie';
 
-export default function SectionItems({sectionItem}){
+export default function SectionItems({sectionItem, isMock}){
 
     const [click, setClick] = useState(false);
     const isLogged = useSelector((param) => param.login.isLoggedIn);
     const navigate = useNavigate();
     const cookies = new Cookies();
-
-    useEffect(()=>{
+    
+    
+    function setHearthIcon(wished, click){
         
-        if(sectionItem.wishlist === 1){
-            setClick(true)
-        }else{
-            setClick(false)
+        if(click === true){
+            return MAINURL+APIS.staticMedia+'/Frame-heart.3c9e0c8b.svg'
+        }else if(wished === 1){
+            return MAINURL+APIS.staticMedia+'/Frame-heart.3c9e0c8b.svg'
+        }else if(click === false){
+            return HearthIcon
+        }else if(wished === 0){
+            return HearthIcon
         }
-    },[])
-     
-    const getDatas = (id) =>{
+    }
+    
 
+
+    const getDatas = (id) =>{
+        
         isLogged === false ? 
         navigate('/login')
         :
-        axios({
+        axios({ 
             method: 'post',
             url: 'https://api.wed.az/edu/wishlist/set',
             data: {
@@ -44,7 +51,7 @@ export default function SectionItems({sectionItem}){
             }
               
         })
-        setClick(!click)
+        setClick(true)
     }
     
 
@@ -55,7 +62,11 @@ export default function SectionItems({sectionItem}){
                 
                 <div className="center-right">
                     <div className="wedding-hall-img">
-                        <img src={Photo+sectionItem.images[0].url}/>
+                        {isMock === false ? 
+                            <img src={Photo+sectionItem.images[0].url}/>    
+                            : <img src={sectionItem.images}/>
+                        }
+                    
                         <div className="wedding-hall-icon-section">
                             <div className="wedding-hall-first-icon">
                                 <img src={countIcon}/>
@@ -94,7 +105,7 @@ export default function SectionItems({sectionItem}){
                         </div>
                         <div className="wedding-hall-icon" onClick={()=> getDatas(sectionItem.id)}>
                             <img className='hearthIcon-normal' 
-                                src={click === false ? HearthIcon : `${MAINURL}${APIS.staticMedia}/Frame-heart.3c9e0c8b.svg`}
+                                src = {setHearthIcon(sectionItem.wishlist, click)}
                             />
                         </div>
                     </div>

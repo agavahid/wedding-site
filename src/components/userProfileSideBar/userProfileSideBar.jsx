@@ -1,10 +1,10 @@
 import './userProfileSideBar.css';
+import React from 'react';
 import userPic from '../assets/images/profilePage/defaultPP.png';
 
 import Cookies from 'universal-cookie';
 import { useState } from 'react';
 import axios from 'axios';
-import React from 'react';
 
 export default function UserProfileSideBar(){
 

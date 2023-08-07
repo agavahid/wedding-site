@@ -3,16 +3,22 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import React from 'react';
-
+import { headerNavBarMockDatas } from '../headerNavBarMockDatas/headerNavBarMockDatas';
 export default function BottomLocation(){
 
     const[getPost, setPost] = useState([]);
     const reverted = [...getPost].reverse();
+    
     useEffect(()=> {
         axios.get("https://api.wed.az/edu/general/menu")
-        .then((response)=>
-            setPost(response.data.data)
-        )
+        .then((response)=>{
+            
+            if(response.data.data !== undefined && response.data.data !== null && response.data.data !== []){
+                setPost(response.data.data)
+            }else{
+                setPost(headerNavBarMockDatas)
+            }
+        })
  
     },[])
     

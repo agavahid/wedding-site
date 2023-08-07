@@ -1,6 +1,7 @@
 import './homeSearch.css'
+import {headerNavBarMockDatas} from "../headerNavBarMockDatas/headerNavBarMockDatas" ; 
 import MobileSearchSection from '../mobileSearch/mobileSearch';
-import React, { useEffect, useState,useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
 
@@ -21,13 +22,20 @@ export default function HomeSearch(){
         reversedArr =[...url].reverse()
     }
     reverseFunc()
+    
     useEffect(()=>{
         axios.get("https://api.wed.az/edu/general/menu") 
-            .then((response)=>
-                setUrl(response.data.data)
-            )
+            .then((response)=>{
+                if(response.data.data !== undefined && response.data.data !== null && response.data.data !== []){
+                    setUrl(response.data.data)
+                }else{
+                    setUrl(headerNavBarMockDatas)
+                }
+                
+            })
     },[])
     
+  
     useEffect(()=>{
         axios.get("https://api.wed.az/edu/general/getbasecities")
             .then((response)=>

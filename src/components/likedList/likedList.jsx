@@ -79,7 +79,6 @@ export default function LikedList(){
                 </div>
             </div>
             <div className="liked-list-body">
-                {console.log(post)}
                 {
                     post !== undefined && post.length > 0 ?
                         post.map((choosedItem,i)=>
@@ -115,7 +114,7 @@ export default function LikedList(){
                                     <Link 
                                         to={`/${choosedItem.service.item.urlTitle}`}
                                         className='choosedItem-link'
-                                    >...ətraflı bax {console.log(choosedItem)}</Link>
+                                    >...ətraflı bax</Link>
                                 </div>
 
                             </div>

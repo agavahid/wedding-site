@@ -31,7 +31,7 @@
     border: 1px solid #f7f7f7;
     margin-left: 10px;
     border-radius: 5px;
-    z-index: 222;
+    z-index: 222222;
 }
 .header-dropdown-container{
     cursor: pointer;
@@ -118,6 +118,7 @@
     color: #3a3a3a;
     position: relative;
     cursor: pointer;
+    z-index: 11111;
 }
 .header-top-right2-drp{
     top: 46px;
@@ -184,7 +185,7 @@
     display: block;
 }
 .menu1{
-    z-index: 6;
+    z-index: 4444;
     justify-content: center;
     cursor: pointer;
 }

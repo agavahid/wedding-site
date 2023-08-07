@@ -10,7 +10,7 @@ export default function ComingSoon(){
         
         
         <div className="coming-soon-container">
-            <img src={ComingSoonImg} />
+            <img src={ComingSoonImg} alt=''/>
             <div className="coming-soon-content">
                 <h1>Tezliklə</h1>
                 <p>Bu səhifə hazırlanır. Tezliklə geri qayıdın</p>

@@ -23,7 +23,7 @@
         visibility: hidden;
     }
     .mobile-header-left-drp.active{
-        width: 50%;
+        width: 60%;
         visibility: visible;
         position: absolute;
         opacity: 1;

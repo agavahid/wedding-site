@@ -12,11 +12,8 @@ import LikedList from './components/likedList/likedList';
 import Messages from './components/messages/messages';
 import Profile from './components/profile/profile';
 import Register from './components/register/register';
-import { useEffect, useState } from 'react';
 import ProtectedRoute from './components/protectedRoute/protectedRoute';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { setLogin, setLogOut } from './store/features/loginValue/loginValue';
 
 function App() {
  

@@ -8,7 +8,7 @@ import { URL, APIS, MAINURL } from '../../configs/configs';
 import React, {useState, useEffect, useRef } from 'react';
 import { Link } from "react-router-dom"; 
 import axios from 'axios';
-
+import { headerNavBarMockDatas } from '../headerNavBarMockDatas/headerNavBarMockDatas';
 
 
 export default function LeftDropdownMobile(){
@@ -16,17 +16,19 @@ export default function LeftDropdownMobile(){
     const isActive = useSelector((state) => state.isLeftActive.activity);
     
     const [post, setPost] = useState([]);
-    const [showDrp, setDrp] = useState(false);
     const [showFirstDrpList, setFirstDrpList] = useState(false);
     const [showSecondDrpList, setSecondDrpList] = useState(false); 
     
 
 
     useEffect(() => {
+        /* 
         axios.get(URL + APIS.menu)
         .then(function(response) {
-            setPost(response.data.data);
+            setPost(response.data.data); 
         });
+        */
+       setPost(headerNavBarMockDatas)
     }, []);
 
     

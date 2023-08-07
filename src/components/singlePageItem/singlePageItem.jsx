@@ -3,14 +3,15 @@ import './singlePageItem.css';
 import 'swiper/swiper.min.css';
 // import "swiper/css/pagination";
 // import "swiper/css/navigation";
-import heartIcon from '../assets//icons/pageIcons/heart-icon.png';
+import heartIcon from '../assets/icons/pageIcons/heart-icon.png';
 import okIcon from '../assets/icons/pageIcons/ok.png';
 import facebookIcon from '../assets/icons/pageIcons/facebook.png';
 import instagramIcon from '../assets/icons/pageIcons/instagram.png';
 import PhoneImg from '../assets/images/listImages/Phone.png';
 import WhatsuppIcon from '../assets/icons/pageIcons/wp.png';
 
-import {SinglePageUrl, Photo, MAINURL, APIS} from '../../configs/configs.js';
+import { sectionItemsMockDatas } from "../sectionItemsMockDatas/sectionItemsMockDatas";
+import { SinglePageUrl, Photo, MAINURL, APIS } from '../../configs/configs.js';
 import SinglePageContactForm from '../singlePageForm/singlePageForm';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Navigation, Keyboard, Scrollbar } from "swiper";
@@ -22,6 +23,7 @@ import React from 'react';
 import Cookies  from 'universal-cookie';
 
 export default function SinglePageItem(){
+    const [isMock, setMock] = useState(false)
     const {slug} = useParams();
     const [showWorkHours, setWorkHours] = useState(false);
     const [showNumber, setShowNumber] = useState(false);
@@ -68,7 +70,7 @@ export default function SinglePageItem(){
             }
         })
             .then((response)=>{
-
+                if(response.data.data !== undefined && response.data.data !== [] && response.data.data !== null){
                 setPost(response.data.data);
                 setId(response.data.data.item.id)
                 setWorkHoursData({
@@ -82,9 +84,35 @@ export default function SinglePageItem(){
                 }) 
                 response.data.data.item.wishlist === 1 ?
                 setClick(true) : setClick(false)
-            })
+                setMock(false)
+            }else{
+                sectionItemsMockDatas.map((item,index)=>{
+                    item.items.map((subItem, idx)=>{
+                        if(subItem.item.urlTitle === slug){
+                            console.log(subItem.item)
+                        }
+                    })
+                })
+                
+                
+            }
+        })
             
     },[slug]); 
+
+    /*
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+        setMock(true)
+        sectionItemsMockDatas.map((item,index)=>{
+        item.items.map((subItem, idx)=>{
+            if(subItem.item.urlTitle === slug){
+                setPost(subItem)
+            }
+        })
+    })
+    },[])
+    */
 
 
     return(
@@ -100,7 +128,11 @@ export default function SinglePageItem(){
                                         <Link to={'/'}>Esas Sehife</Link>
                                     </div>
                                     <div className="choosed-item">
-                                        <Link to={`/${post.breadcrumb[0].urlTitle}/${post.breadcrumb[0].stcUrlTitle}`}>{post.breadcrumb[0].name}</Link>
+                                        {
+                                            isMock === true ?
+                                            <Link to={`/${post.breadcrumb.urlType}/${post.breadcrumb.stcUrlTitle}`}>{post.breadcrumb.name}</Link> : 
+                                            <Link to={`/${post.breadcrumb[0].urlTitle}/${post.breadcrumb[0].stcUrlTitle}`}>{post.breadcrumb[0].name}</Link>
+                                        }
                                     </div>
                                     <div className="choosed-item-active">
                                         <Link to={""}>{post.item.title}</Link>
@@ -114,11 +146,16 @@ export default function SinglePageItem(){
                                     <div className="about-specifies">
                                         <h2>{post.item.title}</h2>
                                         <div  className="about-specifies-container">
-                                            <div className='about-specifies-items'>{post.item.address.main[0].Address}</div>
+                                            {
+                                                isMock === false ?
+                                                <div className='about-specifies-items'>{post.item.address.main[0].Address}</div>
+                                                : null
+                                            }
                                             <div  className='about-specifies-items' id="bluemenuitem">Xeritede bax</div>
+                                            
                                             <div onClick={()=>setWorkHours(!showWorkHours)} 
                                                 className='about-specifies-items'>Is Saatlari
-                                                {showWorkHours === true ?
+                                                { isMock === true && showWorkHours === true ?
                                                     <div className='work-hour-container'> 
 
                                                         <ul className='work-hours'>
@@ -134,11 +171,12 @@ export default function SinglePageItem(){
                                                 : null  
                                                 }
                                             </div>
+                                            
                                             <div className='about-specifies-items'>
                                                 <div className='show-number-section-header'
                                                     onClick={() => setShowNumber(!showNumber)}
                                                 >Nömreni Göster</div>
-                                                {   showNumber  === true ?
+                                                { isMock === true && showNumber  === true ?
                                                         <ul className='show-number-section-container'>
                                                             <span className='caret'></span>
                                                             <li className='show-number-section-item'>
@@ -173,45 +211,49 @@ export default function SinglePageItem(){
                             <div className="middle-top">
                                 <div className="middle-center">
                                     <div className="photo-group">
-                                        <div className="middle-photo-container">
-
-                                            <Swiper
-                                                slidesPerView={2}
-                                                centeredSlides={false}
-                                                slidesPerGroupSkip={2}
-                                                grabCursor={false}
-                                                keyboard={{
-                                                enabled: false,
-                                                }}
-                                                breakpoints={{
-                                                769: {
-                                                    slidesPerView: 1,
-                                                    slidesPerGroup: 2,
-                                                },
-                                                1000: {
-                                                    slidesPerView: 2,
-                                                    slidesPerGroup: 1,
+                                        <div className={isMock === false ? "middle-photo-container" : "mockPhotoContainer"}>
+                                        {
+                                            isMock === false ?
+                                                <Swiper
+                                                    slidesPerView={2}
+                                                    centeredSlides={false}
+                                                    slidesPerGroupSkip={2}
+                                                    grabCursor={false}
+                                                    keyboard={{
+                                                    enabled: false,
+                                                    }}
+                                                    breakpoints={{
+                                                    769: {
+                                                        slidesPerView: 1,
+                                                        slidesPerGroup: 2,
+                                                    },
+                                                    1000: {
+                                                        slidesPerView: 2,
+                                                        slidesPerGroup: 1,
+                                                    }
+                                                    }}
+                                                    onSlideChange={function (sw) {
+                                                        var offer = document.querySelector('#numberSlides');
+                                                        offer.innerHTML = (sw.activeIndex +  1) + '/' + sw.slides.length;
+                                                    }}
+                                                    spaceBetween={80}
+                                                    scrollbar={true}
+                                                    navigation={true}
+                                                    modules={[Keyboard, Scrollbar, Navigation]}
+                                                    className="mySwiper"
+                                                    
+                                                >
+                                                <div id="numberSlides">1/ { isMock === false ? post.item.files.imageCount : null}</div>
+                                                {
+                                                    post.item.files.images.map((item, i)=>
+                                                        <SwiperSlide key={i} className="mySwiperSlider"><img  src={Photo+item.url}/></SwiperSlide>
+                                                        
+                                                    )
                                                 }
-                                                }}
-                                                onSlideChange={function (sw) {
-                                                    var offer = document.querySelector('#numberSlides');
-                                                    offer.innerHTML = (sw.activeIndex +  1) + '/' + sw.slides.length;
-                                                }}
-                                                spaceBetween={80}
-                                                scrollbar={true}
-                                                navigation={true}
-                                                modules={[Keyboard, Scrollbar, Navigation]}
-                                                className="mySwiper"
                                                 
-                                            >
-                                            <div id="numberSlides">1/{post.item.files.imageCount}</div>
-                                            {post.item.files.images.map((item, i)=>
-                                                <SwiperSlide key={i} className="mySwiperSlider"><img  src={Photo+item.url}/></SwiperSlide>
-                                                
-                                            )}
-
-                                            </Swiper>
-
+                                                </Swiper> :
+                                                <img  src={post.item.images}/>
+                                            }
                                             <div className="mobile-photo-container-icon">
                                                 <img src="../images/Vector 9.24white.png" alt=""/>
                                             </div>
@@ -236,11 +278,15 @@ export default function SinglePageItem(){
 
                                             <div className="content-common-content-top">
 
-                                            <Link className='section-link' to={"/venue/hall"}>{post.breadcrumb[0].name}</Link>
+                                            { isMock === false ?
+                                                <Link className='section-link' to={"/venue/hall"}>{post.breadcrumb[0].name}</Link>
+                                                :
+                                                <Link className='section-link' to={"/venue/hall"}>{post.breadcrumb.name}</Link>
+                                            }
                                             </div>
                                             <div className="content-common-content-middle">
                                                 <h2>{post.item.title}</h2>
-                                                <p>{post.item.address.main[0].Address}</p>
+                                                <p>{isMock === false ? post.item.address.main[0].Address : null}</p>
                                             </div>
                                             <div className="content-common-content-bottom">
                                                 <Link to="#" className='callButton'>Zeng Et</Link>
@@ -264,62 +310,67 @@ export default function SinglePageItem(){
                                             <p>{post.item.description}</p>
                                         </div>
                                         {
-                                            post.item.segment.length > 0 ?
-                                                <div className='aboutItem-container'>
-                                                    <h2>Segment</h2>
-                                                    <div className="aboutItem-content">
-                                                        {post.item.segment.map((segmenItem, i)=>
-                                                            segmenItem.status === true ? 
-                                                                <div className='aboutItem' key={i}>
-                                                                    <img className='okImg' src={okIcon} />{segmenItem.name}
-                                                                </div>
-                                                            : null
-                                                        )}
+                                            isMock === false ?
+                                                post.item.segment.length > 0 ?
+                                                    <div className='aboutItem-container'>
+                                                        <h2>Segment</h2>
+                                                        <div className="aboutItem-content">
+                                                            {post.item.segment.map((segmenItem, i)=>
+                                                                segmenItem.status === true ? 
+                                                                    <div className='aboutItem' key={i}>
+                                                                        <img className='okImg' src={okIcon} />{segmenItem.name}
+                                                                    </div>
+                                                                : null
+                                                            )}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            : null
+                                                : null
+                                            :null
                                         }
                                         
                                         {
-                                            post.item.stcServices.length > 0 ?
-                                            
+                                            isMock === false ?
+                                                post.item.stcServices.length > 0 ?
+                                                
+                                                    <div className="aboutItem-container">
+                                                        <h2>Xidmətlər</h2>
+                                                        <div className="aboutItem-content">
+                                                            {
+                                                                post.item.stcServices.map((servicesItem, i)=>
+                                                                    servicesItem.status === true ?
+                                                                        <div className="aboutItem" key={i}>
+                                                                            <img className='okImg' src={okIcon} />{servicesItem.name}
+                                                                        </div>
+                                                                    : null
+                                                                )
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                : null
+                                            :null
+                                        }
+                                        
+                                        {   
+                                            isMock === false ?
+                                                post.item.features.length > 0 ?
+
                                                 <div className="aboutItem-container">
-                                                    <h2>Xidmətlər</h2>
+                                                    <h2>Xüsusiyyətlər</h2>
                                                     <div className="aboutItem-content">
                                                         {
-                                                            post.item.stcServices.map((servicesItem, i)=>
-                                                                servicesItem.status === true ?
+                                                            post.item.features.map((featuresItem, i)=>
+                                                                featuresItem.status === true ? 
                                                                     <div className="aboutItem" key={i}>
-                                                                        <img className='okImg' src={okIcon} />{servicesItem.name}
+                                                                        <img className='okImg' src={okIcon}/> {featuresItem.name}
                                                                     </div>
-                                                                : null
+                                                                :
+                                                                null
                                                             )
                                                         }
                                                     </div>
                                                 </div>
+                                                : null
                                             : null
-                                        }
-                                        
-                                        {   
-                                            post.item.features.length > 0 ?
-
-                                            <div className="aboutItem-container">
-                                                <h2>Xüsusiyyətlər</h2>
-                                                <div className="aboutItem-content">
-                                                    {
-                                                        post.item.features.map((featuresItem, i)=>
-                                                            featuresItem.status === true ? 
-                                                                <div className="aboutItem" key={i}>
-                                                                    <img className='okImg' src={okIcon}/> {featuresItem.name}
-                                                                </div>
-                                                            :
-                                                            null
-                                                        )
-                                                    }
-                                                </div>
-                                            </div>
-                                            : null
-
                                         }
                                         
 

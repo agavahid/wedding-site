@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import CategoryItem from '../categoryItem/categoryItem';
 import React from 'react';
 
-export default function CatalogeItem({catalogeSection}){
+export default function CatalogeItem({catalogeSection, isMock}){
 
     
     return(
@@ -28,7 +28,7 @@ export default function CatalogeItem({catalogeSection}){
                     {
                         catalogeSection.items.map((catalogItem, j)=>
 
-                            <CategoryItem categorySection = {catalogItem} key={j}></CategoryItem>
+                            <CategoryItem categorySection = {catalogItem} key={j} isMock={isMock}></CategoryItem>
                             
                         )
                     }                                

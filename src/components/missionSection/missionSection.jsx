@@ -1,5 +1,6 @@
 import './missionSection.css';
 import axios from 'axios';
+import { missionSectionMockDatas } from '../missionSectionMockDatas/missionSectionMockDatas';
 import { useState, useEffect } from 'react';
 import { CdnUrl, APIS } from '../../configs/configs';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,18 +12,19 @@ import React from 'react';
 export default function MissionSection(){   
     const[getUrl, setUrl] = useState([]);
 
+    
     useEffect(()=>{
         axios.get("https://api.wed.az/edu/general/homeblogs") 
-        .then((response)=>
-            setUrl(response.data.data)
-        )
+        .then((response)=>{
+            if(response.data.data !== undefined && response.data.data !== null && response.data.data !== []){
+                setUrl(response.data.data)    
+            }else{
+                setUrl(missionSectionMockDatas)
+            }
+        })
     },[])
-    const pagination = {
-        clickable: true,
-        renderBullet: function (className) {
-          return '<span class="' + className + '">' + "</span>";
-        },
-      };
+    
+    
     return(
 
 
@@ -136,7 +138,7 @@ export default function MissionSection(){
                             <div key={i} id={`item${i}`} className="middle-bottom-first">
                                 <div className="middle-bottom-first-top">
                                     <img src={CdnUrl + APIS.blog +'/' + middleItem.id +'/' + middleItem.id +'.jpg'} alt=""/>
-                                    <div className="middle-bottom-hover">
+                                    <div className="middle-bottom-hover"> 
                                         <a href="#">Davamini Oxu</a>
                                     </div>
                                 </div>

@@ -30,7 +30,7 @@ export default function HomeCategory() {
                             <img src="	https://wed.az/static/media/evlenirik.az-toy-mekanlari-fotoqraf-sadliq-saraylari.1882f91a.jpg" alt="" />
                         </div>
                         <div className="bottom-button-section">
-                            <Link to={index.name +'/'+ APIS.hall}>
+                            <Link to={index.name +'/restaurant'}>
                                 Toy Mekanlari
                             </Link>
                         </div>

@@ -20,7 +20,7 @@ export default function FilterList({submenuItem, getValue, i, checkedItems}){
         
      
         <>
-            <li key={i} className="list-item">
+            <li key={i} className="list-item"> 
                 <div className="list-item-header"
                     onClick= {()=> handle()}>
                     <span>{submenuItem.name}</span>

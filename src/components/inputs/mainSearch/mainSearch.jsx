@@ -7,7 +7,6 @@ import './mainSearch.css';
 
 const Search = () => {
     const data = "https://api.wed.az/edu/search";
-    const mainUrl = "https://wed.az/";
 
     const[searchUrl, setSearchUrl] = useState([]);
     const[sectionWiew, setSectionWiew] = useState(false);

@@ -184,7 +184,7 @@
     text-align: center;
     border-radius: 5px;
     transition: 1s;
-    opacity: 0;
+    opacity: 0; 
 }
 .middle-bottom-hover>a{
     text-decoration: none;

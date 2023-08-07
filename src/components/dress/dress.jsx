@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import Cookies from 'universal-cookie';
 
 import LocationIcon from '../../components/assets/icons/cardicons/location-icon.png';
 import listicon from "../../components/assets/icons/pageIcons/listIcon.png"
@@ -18,12 +19,15 @@ import Search from "../inputs/mainSearch/mainSearch";
 import { MAINURL, APIS } from "../../configs/configs"
 import { useSelector, useDispatch } from "react-redux";
 import { setPage, resetPage } from "../../store/features/sectionPageUrl/sectionPageUrl";
+import { sectionItemsMockDatas } from "../sectionItemsMockDatas/sectionItemsMockDatas";
+
 
 const SectionItems = React.lazy(() => import('../sectionItems/sectionItems'));
 const checkedItems = [];
 
 export default function Dress(){
 
+    const cookies = new Cookies();
     const dispatch = useDispatch();
     const { slug ,urlid } = useParams();
     const [filters, setFilters] = useState([]);
@@ -39,7 +43,9 @@ export default function Dress(){
     const [pageTitle, setPageTitle] = useState('');
     const[isClassActive, setIsClassActive] = useState(1);
     const pageLink = useSelector((item) => item.pageUrl.pageUrl);
-    
+    const [isMock, setMock] = useState(false);
+
+
     useEffect(()=>{
         dispatch(resetPage())
     },[urlid])
@@ -51,6 +57,8 @@ export default function Dress(){
             setShowBody(true)
         }
     },[disabled])
+
+
 
     useEffect(()=>{
         window.scrollTo(0, 0);
@@ -75,6 +83,7 @@ export default function Dress(){
     function getMenuItems(){
         axios.get("https://api.wed.az/edu/general/menu")
             .then((response)=>{
+                
                 for(let i in response.data.data){
                     if(response.data.data[i].name === slug){
                         for(let j in response.data.data[i].categories){
@@ -87,27 +96,77 @@ export default function Dress(){
                 }
             })
     }
-
+    /*
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+        sectionItemsMockDatas.map((item,index) => {
+            if((item.urlTitle === urlid)){
+                setLoading(false)
+                setSectionItems(item.items)
+                setResult(item.items.length)
+                setLoading(false)
+                setMock(true)
+            }
+        })
+    },[pageLink,urlid])
+    
+    */
     function getitem(pageLink, endOfUrl = '' ) {
         setLoading(true);
-        axios({
-            method: 'get',
-            url: `${pageLink}${APIS.stc}${urlid}${endOfUrl}`,
-            headers: {
-                Authorization : `bearer ${localStorage.getItem('userToken')}`
-            }
+        
+        const userToken = cookies.get("userToken");
+        if(userToken !== undefined) {
+            axios({
+                method: 'get',
+                url: `${pageLink}${APIS.stc}${urlid}${endOfUrl}`,
+                headers: {
+                    Authorization : `bearer ${userToken}`
+                }
 
-        })
-        .then((response)=> {
-            setSectionItems(response.data.data.data);
-            setResult(response.data.data.total);
-            setLoading(false)
-            setPageItems(response.data.data)
-           
-        })
+            })
+                .then((response)=> {
+                    if(response.data.data !== undefined && response.data.data !== null && response.data.data !== []){
+                    setSectionItems(response.data.data.data);
+                    setResult(response.data.data.total);
+                    setLoading(false)
+                    setPageItems(response.data.data)
+                    setMock(false)
+                }else{
+                    sectionItemsMockDatas.map((item,index) => {
+                        if((item.urlTitle === urlid)){
+                            setSectionItems(item.items)
+                            setLoading(false)
+                            setMock(true)
+                        }
+                    })
+                }
+            })
+            
+        }else{
+            axios({
+                method: 'get',
+                url: `${pageLink}${APIS.stc}${urlid}${endOfUrl}`
+            })
+                .then((response)=> {
+                    if(response.data.data !== undefined && response.data.data !== null && response.data.data !== []){
+                    setSectionItems(response.data.data.data);
+                    setResult(response.data.data.total);
+                    setLoading(false)
+                    setPageItems(response.data.data)
+                }else{
+                    sectionItemsMockDatas.map((item,index) => {
+                        if((item.urlTitle === urlid)){
+                            setSectionItems(item.items)
+                            setLoading(false)
+                            setMock(true)
+                        }
+                    })
+                }
+            })
+        }
         
     }
-
+    
 
     function getUrlItem(checkedItems){
         const urlitem = [];
@@ -285,7 +344,7 @@ export default function Dress(){
                         <ul className="center-left-ul">
                              
                             {
-                                filters.map((item,id) =>
+                                filters.map((item,id) => 
                                     <FilterList 
                                         submenuItem = {item} 
                                         i={id}
@@ -318,17 +377,24 @@ export default function Dress(){
                                     
                                     :
                                     isLoading ? <Loading /> : 
+                                    isMock === false ?
                                     sectionItems.map((item, idx)=>
                                         
-                                        <SectionItems sectionItem = {item} key={idx}/>
+                                        <SectionItems sectionItem = {item} key={idx} isMock = {isMock}/>
                                         
                                     )
+                                    :
+                                    sectionItems.map((item, idx)=>
+                                        
+                                    <SectionItems sectionItem = {item.item} key={idx} isMock = {isMock}/>
+                                    
+                                )
                             :
                             
                             <div>
                                 <div className="map-container">
                                     <div className="wp-map-main">
-                                        
+                                        {console.log(isMock)}
                                     </div>
                                 </div>
                             </div>

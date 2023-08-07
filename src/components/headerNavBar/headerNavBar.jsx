@@ -12,6 +12,8 @@ import { Link } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 import { useDetectClickOutside } from 'react-detect-click-outside';
+import { headerNavBarMockDatas } from '../headerNavBarMockDatas/headerNavBarMockDatas';
+
 
 export default function HeaderNavBar(){
     
@@ -25,21 +27,12 @@ export default function HeaderNavBar(){
     const [showDrp, setDrp] = useState(false);
     const [langItem, showLangItem] = useState(false);
 
-    // code commenting
-
-    /**
-     * Dropdown funtions start
-     */
-
+   
     const closeDropdown = () => {
         setDrp(false);
     }
 
     const ref = useDetectClickOutside({ onTriggered: closeDropdown });
-
-    /**
-     * Dropdown funtions end
-     */
 
     useEffect(()=>{
         axios({
@@ -49,10 +42,13 @@ export default function HeaderNavBar(){
         }).then(function(response) {
             if(cookies.get('userToken') !== undefined){
                 dispatch(setLogin(true))
+                
             }else if(cookies.get('userToken') === undefined ){
+                
                 dispatch(setLogOut(false));
             }
-            setPost(response.data.data);
+            setPost(headerNavBarMockDatas);
+                
             
         });
     },[]);
@@ -63,7 +59,10 @@ export default function HeaderNavBar(){
         cookies.remove('userToken')
         dispatch(setLogOut());
     }
-
+    function drpp(e){
+        e.stopPropagation()
+        setDrp(!showDrp)
+    }
     return(
 
         <div className='top'>
@@ -90,8 +89,8 @@ export default function HeaderNavBar(){
                             </div>
                             {langItem === false ? null :
                                 <ul className="header-dropdown-items">
-                                    <li>EN</li>
-                                    <li>RU</li>
+                                    <li onClick={()=> showLangItem(!langItem)}>EN</li>
+                                    <li onClick={()=> showLangItem(!langItem)}>RU</li>
                                 </ul>
                             }
                            
@@ -108,12 +107,12 @@ export default function HeaderNavBar(){
                         {
                             logValue ? 
                                 <Link className='red-hearth-section' to='/profile/likedlist'>
-                                    <img src={RedHearth}/>
+                                    <img src={RedHearth} alt=''/>
                                 </Link>
                             :   
                                
                                 <Link className="red-hearth-section" to='/register'>
-                                    <img src={RedHearth}/>
+                                    <img src={RedHearth} alt=''/>
                                 </Link>
                     
                         }
@@ -129,8 +128,8 @@ export default function HeaderNavBar(){
                                     {logValue === false ? 
                                         <div className="header-top-right2-drp">
                                             <div className="header-top-right2-drp-contents">
-                                                <Link to="login">Giris</Link>
-                                                <Link to="register">Qeydiyyat</Link>
+                                                <Link onClick={()=>drpp()} to="login">Giris</Link>
+                                                <Link onClick={()=>drpp()} to="register">Qeydiyyat</Link>
                                             </div>
                                             
                                         </div>
@@ -140,7 +139,7 @@ export default function HeaderNavBar(){
                                             <div className="header-top-right2-drp-contents">
                                                 <h4>İstifadəçi adı</h4>
                                                 <Link to='/profile/settings'>Tənzimləmələr</Link>
-                                                <Link to='/'  onClick={(e)=> logOut(e)}>Çıxış</Link>
+                                                <Link to='/' onClick={(e)=> logOut(e)}>Çıxış</Link>
                                             </div>
                                             
                                         </div>

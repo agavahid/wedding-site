@@ -137,6 +137,7 @@
 }
 .page-type{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     width: 150px;
 }

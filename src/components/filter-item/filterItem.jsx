@@ -16,7 +16,7 @@ const FilterItem = ({submenuItem, submenuListItem, onChangeFunc, checkedItems}) 
 
     }, [checkedItems.length])
 
-    return(
+    return( 
         <li className="center-left-drp-ul-item">
             <label htmlFor={submenuListItem.name} className="container">
                 {submenuListItem.name}
