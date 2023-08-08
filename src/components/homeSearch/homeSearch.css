@@ -194,6 +194,10 @@
 .itemLink{
     text-decoration: none;
     color: #3a3a3a;
+    cursor: pointer;
+}
+.second-search-category-drp li{
+    cursor: pointer;
 }
 .mobile-search-content, .mobileSearchContainer{
     display: none;

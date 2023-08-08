@@ -34,6 +34,9 @@ const Search = () => {
         });
            
     }
+    function resetSearchTest(){
+        loadBlogData()
+    }
     return(
         
         <>     
@@ -61,7 +64,7 @@ const Search = () => {
                                         searchUrl.map((item,i)=>
                                         
                                             <li key={i} >
-                                                <Link className="resultItem" to={'/' + item.urlTitle}>
+                                                <Link className="resultItem" to={'/' + item.urlTitle} onClick={()=> resetSearchTest()}>
                                                     <p className="resultItemTitle">{item.title}</p>
                                                     <img className="resultItemImg" src={Photo + item.images[0].url} />
                                                 </Link>
